@@ -1,0 +1,509 @@
+
+.header-search {
+    margin-top: 7px;
+}
+
+.header-search form {
+    position: relative;
+}
+
+.header-search form input {
+    background: #ededed none repeat scroll 0 0;
+    border: 0 none;
+    color: #333;
+    font-size: 14px;
+    height: 42px;
+    line-height: 40px;
+    margin: 0;
+    padding-left: 10px;
+    width: 100%;
+    border-radius: 5px;
+    padding-right: 47px;
+}
+
+.header-search form a {
+    background: #f07c29 none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    height: 42px;
+    line-height: 40px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 42px;
+    border-radius: 0 5px 5px 0px;
+}
+
+.header-search form a:hover {
+    background: #232323 none repeat scroll 0 0;
+}
+
+.header-mid-area .mini-cart {
+    float: left;
+    display: inline-block;
+}
+
+.header-mid-area .mini-cart ul li a {
+    color: #666666;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 25px;
+    text-transform: capitalize;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.header-mid-area .mini-cart ul li a i {
+    padding-right: 8px;
+}
+
+.header-mid-area .mini-cart ul li a:hover {
+    color: #f07c29;
+}
+
+.header-mid-area .my-cart {
+    display: inline-block;
+    float: right;
+    margin-top: -8px;
+}
+
+.header-mid-area .my-cart ul li {
+    position: relative;
+}
+
+.header-mid-area .my-cart ul>li>a {
+    color: #444444;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: .3s;
+}
+.header-mid-area .my-cart ul>li:hover a {
+    color: #f07c29;
+}
+
+.header-mid-area .my-cart ul li>a>i {
+    font-size: 40px;
+    padding-right: 30px;
+}
+
+.header-mid-area .my-cart ul li>span {
+    background: #f07c29 none repeat scroll 0 0;
+    border-radius: 50%;
+    bottom: 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    height: 30px;
+    left: 24px;
+    line-height: 30px;
+    position: absolute;
+    text-align: center;
+    width: 30px;
+}
+
+.mini-cart-sub {
+    position: absolute;
+    background-color: #fff;
+    border: medium none;
+    border-radius: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    display: block;
+    left: auto;
+    top: 150%;
+    opacity: 0;
+    padding: 20px;
+    right: 0;
+    transition: all 0.3s ease 0s;
+    visibility: hidden;
+    width: 280px;
+    z-index: 99999;
+}
+
+.header-mid-area .my-cart ul>li:hover .mini-cart-sub {
+    opacity: 1;
+    visibility: visible;
+    top: 110%;
+}
+
+.cart-product .single-cart {
+    display: flex;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.cart-product .single-cart .cart-img {
+    flex: 0 0 65px;
+    margin-right: 15px;
+}
+
+.cart-product .single-cart .cart-img a img {
+    width: 100%;
+}
+
+.cart-product .single-cart .cart-info {
+    overflow: hidden;
+    padding-right: 10px;
+    position: relative;
+}
+
+.cart-icon {
+    display: flex;
+    flex-grow: 100;
+    justify-content: flex-end;
+}
+
+.cart-icon a i {
+    color: #232323;
+    transition: .3s;
+}
+
+.cart-icon a:hover i {
+    color: #f07c29;
+}
+
+.cart-product .single-cart .cart-info h5 {
+    margin-bottom: 0px;
+}
+
+.header-mid-area .my-cart ul>li .cart-product .single-cart .cart-info h5 a {
+    color: #666;
+    font-family: Rufina;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 17px;
+    margin-bottom: 0;
+    text-transform: capitalize;
+}
+
+.header-mid-area .my-cart ul>li .cart-product .single-cart .cart-info h5 a:hover,
+.header-mid-area .my-cart ul>li .cart-bottom a:hover {
+    color: #f07c29;
+}
+
+.cart-product .single-cart .cart-info p {
+    margin-bottom: 0;
+    font-family: Rufina;
+    font-size: 15px;
+}
+
+.cart-totals {
+    margin-bottom: 15px;
+}
+
+.cart-totals h5 {
+    color: #606060;
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: Rufina;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.cart-totals h5 span {
+    display: block;
+    float: right;
+}
+
+.home-3 .header-mid-area .my-cart ul>li .mini-cart-sub .cart-totals h5 span {
+    background: none;
+}
+
+.home-4 .header-mid-area .my-cart ul>li .mini-cart-sub .cart-totals h5 span {
+    background: none;
+}
+
+.home-6 .header-mid-area .my-cart ul>li .mini-cart-sub .cart-totals h5 span {
+    background: none;
+}
+
+.header-mid-area .my-cart ul>li .cart-bottom a.view-cart {
+    margin-bottom: 10px;
+}
+
+.header-mid-area .my-cart ul>li .cart-bottom a {
+    background-color: #606060;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    height: 36px;
+    line-height: 24px;
+    padding: 7px 15px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    transition: .3s;
+    font-family: Rufina;
+}
+
+.home-3 .header-mid-area .my-cart ul>li .mini-cart-sub .cart-bottom a,
+.home-4 .header-mid-area .my-cart ul>li .mini-cart-sub .cart-bottom a,
+.home-5 .header-mid-area .my-cart ul>li .mini-cart-sub .cart-bottom a,
+.home-6 .header-mid-area .my-cart ul>li .mini-cart-sub .cart-bottom a {
+    color: #fff;
+}
+
+
+.home-3 .header-mid-area .my-cart ul>li .mini-cart-sub .cart-bottom a:hover,
+.home-4 .header-mid-area .my-cart ul>li .mini-cart-sub .cart-bottom a:hover,
+.home-5 .header-mid-area .my-cart ul>li .mini-cart-sub .cart-bottom a:hover,
+.home-6 .header-mid-area .my-cart ul>li .mini-cart-sub .cart-bottom a:hover {
+    color: #f07c29;
+}
+
+/*----------------------------------------*/
+/*  2.3 Main menu area
+/*----------------------------------------*/
+
+.main-menu-area {
+    background: #000000 none repeat scroll 0 0;
+}
+
+.main-menu-area.sticky {
+    background: rgba(0, 0, 0, 0.48) none repeat scroll 0 0;
+}
+
+.main-menu-area.sticky-header-1.sticky:hover {
+    background: rgba(0, 0, 0, 1) none repeat scroll 0 0;
+}
+
+.menu-area {
+    float: left;
+    display: inline-block;
+}
+
+.menu-area ul li {
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+}
+
+.menu-area ul li>a,
+.safe-area a {
+    background: transparent none repeat scroll 0 0;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25px;
+    padding: 13px 20px;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 4;
+}
+
+.menu-area ul li a i {
+    padding-left: 10px;
+}
+
+.menu-area ul li:before,
+.safe-area:before {
+    background: #f07c29 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: -8px;
+    transition: .5s;
+    z-index: 1;
+}
+
+.menu-area ul li:hover:before,
+.menu-area ul li.active:before,
+.safe-area:hover:before {
+    opacity: 1;
+}
+
+/* .menu-area ul li a:before {
+    background: #f07c29;
+    bottom: 0;
+    content: "";
+    height: 3px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    transition: .5s;
+    width: 0%;
+} */
+
+.menu-area ul li:hover a:before,
+.menu-area ul li.active a:before {
+    width: 220%;
+    opacity: 1;
+}
+
+.menu-area ul li a:after,
+.safe-area a:after {
+    border: 4px solid transparent;
+    content: "";
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    transition: .5s;
+    border-bottom-color: #a74600;
+    border-left-color: #a74600;
+    opacity: 0;
+}
+
+.menu-area ul li:hover a:after,
+.menu-area ul li.active a:after,
+.safe-area:hover a:after {
+    opacity: 1;
+}
+
+.safe-area {
+    display: inline-block;
+    float: left;
+    position: relative;
+}
+
+.safe-area a {
+    position: relative;
+    z-index: 4
+}
+
+.menu-area ul li .mega-menu {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    position: absolute;
+    z-index: 6;
+    width: 910px;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: 0 0 0;
+    transition: .5s;
+    visibility: hidden;
+}
+
+.menu-area ul li:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+}
+
+.menu-area ul li .mega-menu span {
+    float: left;
+    width: 25%;
+    padding-right: 20px;
+}
+
+.menu-area ul li .mega-menu span a.title {
+    border-bottom: 1px solid #e5e5e5;
+    color: #393939;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    margin-bottom: 12px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.menu-area ul li .mega-menu span a {
+    display: block;
+    color: #777;
+    font-size: 14px;
+    line-height: 30px;
+    text-transform: capitalize;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.menu-area ul li .mega-menu span a:hover,
+.menu-area ul li .sub-menu ul li a:hover {
+    color: #f07c29;
+}
+
+.menu-area ul li .mega-menu span a:before {
+    display: none;
+}
+
+.menu-area ul li .mega-menu span a:after {
+    display: none;
+}
+
+.menu-area ul li .mega-menu-2 {
+    width: 690px;
+}
+
+.menu-area ul li .mega-menu-2 span {
+    width: 33.33%;
+}
+
+.menu-area ul li .mega-menu-3 {
+    width: 460px;
+}
+
+.menu-area ul li .mega-menu-3 span {
+    width: 50%;
+}
+
+.menu-area ul li .sub-menu {
+    background: #fff;
+    box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.1);
+    left: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 45;
+    padding: 10px 20px 15px;
+    position: absolute;
+    z-index: 6;
+    transform: scaleY(0);
+    transform-origin: 0 0 0;
+    transition: .5s;
+    width: 200px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu-area ul li:hover .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+}
+
+.menu-area ul li .sub-menu ul li {
+    display: block;
+}
+
+.menu-area ul li .sub-menu ul li:before {
+    display: none;
+}
+
+.menu-area ul li .sub-menu ul li a {
+    color: #777;
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 5px 0 3px;
+    text-decoration: none;
+    transition: .3s;
+    text-transform: capitalize;
+}
+
+.menu-area ul li .sub-menu ul li a:before {
+    display: none;
+}
+
+.menu-area ul li .sub-menu ul li a:after {
+    display: none;
+}
+
+.main-menu-area.sticky {
+    left: 0;
+    position: fixed;
+    top: 0;
+    transition: .5s;
+    width: 100%;
+    z-index: 99999999;
+}

@@ -1,0 +1,102 @@
+.user-login-area {
+    overflow: hidden;
+    background: #fff;
+}
+
+.login-title h2 {
+    color: #202020;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    text-transform: capitalize;
+    font-family: 'Rufina', serif;
+    font-weight: 400;
+}
+
+.login-title p {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.6em;
+    font-family: 'Rufina', serif;
+    font-weight: 400;
+    color: #333;
+}
+
+.login-form {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 25px 30px;
+    width: 100%;
+}
+
+.login-form .single-login {
+    margin-bottom: 15px;
+}
+
+.login-form .single-login label {
+    color: #333;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 7px;
+    display: block;
+    font-family: 'Rufina', serif;
+    font-weight: 400;
+}
+
+.login-form .single-login input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px solid #eceff8;
+    padding: 12px 10px;
+    width: 100%;
+    font-family: 'Rufina', serif;
+    font-weight: 400;
+}
+
+.login-form .single-login a {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px solid #eceff8;
+    display: inline-block;
+    padding: 10px 43px;
+    color: #333;
+    text-transform: capitalize;
+    text-decoration: none;
+    float: left;
+    transition: .3s;
+    font-family: 'Rufina', serif;
+    font-weight: 400;
+}
+
+.login-form .single-login a:hover {
+    background: #F07C29;
+    color: #fff;
+    border: 1px solid #F07C29;
+}
+
+.single-login input#rememberme {
+    float: left;
+    width: 7%;
+    margin-top: 14px;
+}
+
+.single-login-2 span {
+    float: left;
+    margin-top: 10px;
+    font-family: 'Rufina', serif;
+    font-weight: 400;
+    color: #333;
+}
+
+.single-login-2 {
+    overflow: hidden;
+}
+
+.login-form>a {
+    color: #F07C29;
+    line-height: 24px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}

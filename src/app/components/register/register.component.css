@@ -1,0 +1,91 @@
+.single-register {
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+
+
+.single-register form label,
+.single-register label {
+    color: #333;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 7px;
+    font-family: 'Rufina', serif;
+    font-weight: 400;
+}
+
+.single-register form input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px solid #eceff8;
+    box-shadow: none;
+    color: #333;
+    font-size: 14px;
+    height: 45px;
+    padding-left: 10px;
+    width: 100%;
+    font-family: 'Rufina', serif;
+    font-weight: 400;
+}
+
+.single-register .chosen-select {
+    height: 45px;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px solid #eceff8;
+    color: #626262;
+    font-size: 14px;
+    height: 45px;
+    padding-left: 10px;
+    box-shadow: none;
+    text-align: left;
+    font-family: 'Rufina', serif;
+    font-weight: 400;
+}
+
+.single-register input#billing_address_2 {
+    margin-top: 15px;
+}
+
+.single-register-3 #rememberme {
+    float: left;
+}
+
+.single-register-3 label {
+    float: left;
+    margin-top: 0;
+    padding-left: 10px;
+    font-size: 13px;
+    font-family: 'Rufina', serif;
+    font-weight: 400;
+}
+
+.single-register-3 label a {
+    color: #F07C29;
+    font-size: 14px;
+    text-decoration: none;
+    font-family: 'Rufina', serif;
+    font-weight: 400;
+}
+
+.single-register>a {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px solid #eceff8;
+    box-shadow: none;
+    color: #626262;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 6px;
+    padding: 12px 48px;
+    text-decoration: none;
+    transition: .3s;
+    font-family: 'Rufina', serif;
+    font-weight: 400;
+}
+
+.single-register>a:hover {
+    background-color: #F07C29;
+    color: #fff;
+    border: 1px solid #F07C29;
+}
+
