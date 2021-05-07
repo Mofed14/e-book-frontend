@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-lg-6 col-md-4 col-12">
                     <div class="logo-area text-center logo-xs-mrg">
-                        <a routerLink="index"><img src="img/logo/logo.png" alt="logo"></a>
+                        <a routerLink="index"><img [src]="logo" alt="logo"></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-12">
@@ -83,8 +83,6 @@
 
                                 <li><a routerLink="login">login</a></li>
                                 <li><a routerLink="register">register</a></li>
-
-                            
                             </ul>
                         </nav>
                     </div>
@@ -93,5 +91,30 @@
         </div>
     </div>
     <!-- main-menu-area-end -->
+    <!-- mobile-menu-area-start -->
+		<div class="mobile-menu-area d-lg-none d-block fix">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 nav-mobile">
+						<div class="mobile-menu">
+							<nav id="mobile-menu-active" style="display: block;">
+								<ul id="nav">
+									<li class="active"><a routerLink="index">Home</a>
+										
+									</li>
+									<li><a routerLink="books">Book</a>
+									</li>
+									
+									<li><a routerLink="browse">Broswe</a></li>
+
+									<li><a routerLink="login">login</a></li>
+									<li><a routerLink="register">register</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
     <!-- mobile-menu-area-end -->
 </header>
