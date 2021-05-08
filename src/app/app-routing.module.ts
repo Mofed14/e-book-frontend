@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule ,Routes } from '@angular/router';
 import { BookComponent } from './components/book/book.component';
 import { BrowseComponent } from './components/browse/browse.component';
-import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -11,7 +10,7 @@ import { RegisterComponent } from './components/register/register.component';
 
 
 const routes: Routes = [
-  {path:'',component:HeaderComponent} , 
+   
   {path:'home',component:HomeComponent},
   {path:'books',component:BookComponent},
   {path:'browse',component:BrowseComponent},
