@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private api: ApiService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {
     this.form();
   }
@@ -38,20 +40,21 @@ export class LoginComponent implements OnInit {
     if (body.email && body.password) {
       this.api.login(body).subscribe((res) => {
         if (res.error === 400) {
-          console.log('شكل الايميل غير صحيح');
+          this.toastr.error('شكل الايميل غير صحيح');
         } else if (res.error === 404) {
-          console.log('المستخدم غير موجود ');
+          this.toastr.error('المستخدم غير موجود ');
         } else if (res.error === 401) {
-          console.log('الباسورد غير صحيح');
+          this.toastr.error('الرقم السري غير صحيح');
         } else if (res.success === true) {
           localStorage.setItem('userData', JSON.stringify(res.userdata));
           this.router.navigate(['/home']);
+          this.toastr.success('تم الدخول بنجاح ');
         } else {
           console.log(res);
         }
       });
     } else {
-      console.log('ادخل البيانات المطلوبه ');
+      this.toastr.error('ادخل البيانات المطلوبه ');
     }
   }
 }
