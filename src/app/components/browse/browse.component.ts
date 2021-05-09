@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BrowseComponent implements OnInit {
 
+
+  
+
   constructor() { }
 
   ngOnInit(): void {
