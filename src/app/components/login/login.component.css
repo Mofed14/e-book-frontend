@@ -1,102 +1,162 @@
-.user-login-area {
-    overflow: hidden;
-    background: #fff;
+body {
+  color: #000;
+  overflow-x: hidden;
+  height: 100%;
+  background-image: linear-gradient(to right, #d500f9, #ffd54f);
+  background-repeat: no-repeat;
 }
 
-.login-title h2 {
-    color: #202020;
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    text-transform: capitalize;
-    font-family: 'Rufina', serif;
-    font-weight: 400;
+input,
+textarea {
+  background-color: #f3e5f5;
+  border-radius: 50px !important;
+  padding: 12px 15px 12px 15px !important;
+  width: 100%;
+  box-sizing: border-box;
+  border: none !important;
+  border: 1px solid #f3e5f5 !important;
+  font-size: 16px !important;
+  color: #000 !important;
+  font-weight: 400;
 }
 
-.login-title p {
-    font-size: 16px;
-    font-weight: 400;
-    margin: 0;
-    line-height: 1.6em;
-    font-family: 'Rufina', serif;
-    font-weight: 400;
-    color: #333;
+input:focus,
+textarea:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid #d500f9 !important;
+  outline-width: 0;
+  font-weight: 400;
 }
 
-.login-form {
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    display: inline-block;
-    margin-left: 0;
-    margin-right: 0;
-    padding: 25px 30px;
+button:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  outline-width: 0;
+}
+
+.card {
+  border-radius: 0;
+  border: none;
+}
+
+.card1 {
+  width: 50%;
+  padding: 40px 30px 10px 30px;
+}
+
+.card2 {
+  width: 50%;
+  background-image: linear-gradient(to right, #ffd54f, #d500f9);
+}
+
+#logo {
+  width: 70px;
+  height: 60px;
+}
+
+.heading {
+  margin-bottom: 60px !important;
+}
+
+::placeholder {
+  color: #000 !important;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #000 !important;
+}
+
+::-ms-input-placeholder {
+  color: #000 !important;
+}
+
+.form-control-label {
+  font-size: 12px;
+  margin-left: 15px;
+}
+
+.msg-info {
+  padding-left: 15px;
+  margin-bottom: 30px;
+}
+
+.btn-color {
+  border-radius: 50px;
+  color: #fff;
+  background-image: linear-gradient(to right, #ffd54f, #d500f9);
+  padding: 15px;
+  cursor: pointer;
+  border: none !important;
+  margin-top: 40px;
+}
+
+.btn-color:hover {
+  color: #fff;
+  background-image: linear-gradient(to right, #d500f9, #ffd54f);
+}
+
+.btn-white {
+  border-radius: 50px;
+  color: #d500f9;
+  background-color: #fff;
+  padding: 8px 40px;
+  cursor: pointer;
+  border: 2px solid #d500f9 !important;
+}
+
+.btn-white:hover {
+  color: #fff;
+  background-image: linear-gradient(to right, #ffd54f, #d500f9);
+}
+
+a {
+  color: #000;
+}
+
+a:hover {
+  color: #000;
+}
+
+.bottom {
+  width: 100%;
+  margin-top: 50px !important;
+}
+
+.sm-text {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 992px) {
+  .card1 {
     width: 100%;
-}
+    padding: 40px 30px 10px 30px;
+  }
 
-.login-form .single-login {
-    margin-bottom: 15px;
-}
-
-.login-form .single-login label {
-    color: #333;
-    font-size: 15px;
-    font-weight: 400;
-    margin-top: 7px;
-    display: block;
-    font-family: 'Rufina', serif;
-    font-weight: 400;
-}
-
-.login-form .single-login input {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    border: 1px solid #eceff8;
-    padding: 12px 10px;
+  .card2 {
     width: 100%;
-    font-family: 'Rufina', serif;
-    font-weight: 400;
+  }
+
+  .right {
+    margin-top: 100px !important;
+    margin-bottom: 100px !important;
+  }
 }
 
-.login-form .single-login a {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    border: 1px solid #eceff8;
-    display: inline-block;
-    padding: 10px 43px;
-    color: #333;
-    text-transform: capitalize;
-    text-decoration: none;
-    float: left;
-    transition: .3s;
-    font-family: 'Rufina', serif;
-    font-weight: 400;
-}
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px !important;
+  }
 
-.login-form .single-login a:hover {
-    background: #F07C29;
-    color: #fff;
-    border: 1px solid #F07C29;
-}
+  .card2 {
+    padding: 50px;
+  }
 
-.single-login input#rememberme {
-    float: left;
-    width: 7%;
-    margin-top: 14px;
-}
-
-.single-login-2 span {
-    float: left;
-    margin-top: 10px;
-    font-family: 'Rufina', serif;
-    font-weight: 400;
-    color: #333;
-}
-
-.single-login-2 {
-    overflow: hidden;
-}
-
-.login-form>a {
-    color: #F07C29;
-    line-height: 24px;
-    margin-bottom: 15px;
-    font-size: 14px;
+  .right {
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+  }
 }

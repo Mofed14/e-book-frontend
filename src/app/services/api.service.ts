@@ -89,4 +89,17 @@ export class ApiService {
         })
       );
   }
+
+  //////////////////// for auth guard /////////////
+
+  // tslint:disable-next-line:typedef
+  logedIn() {
+    return localStorage.getItem('userData');
+  }
+
+  // tslint:disable-next-line:typedef
+  notlogedin() {
+    // tslint:disable-next-line:no-unused-expression
+    return !localStorage.getItem('userData');
+  }
 }
