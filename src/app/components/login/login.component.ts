@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     if (body.email && body.password) {
       this.api.login(body).subscribe((res) => {
         if (res.error === 400) {
-          this.toastr.error('شكل الايميل غير صحيح');
+          this.toastr.warning('تاكد من صحة البيانات المدخلة');
         } else if (res.error === 404) {
           this.toastr.error('المستخدم غير موجود ');
         } else if (res.error === 401) {
