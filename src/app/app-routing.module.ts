@@ -5,6 +5,7 @@ import { BrowseComponent } from './components/browse/browse.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { AuthGuard } from './services/auth.guard';
 import { AnonymousService } from './services/anonymousservice.service';
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
     children: [
       { path: 'books', component: BookComponent },
       { path: 'browse', component: BrowseComponent },
+      { path: 'aboutus', component: AboutusComponent },
     ],
   },
 ];

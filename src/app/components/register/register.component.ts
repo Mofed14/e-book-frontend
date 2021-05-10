@@ -44,18 +44,16 @@ export class RegisterComponent implements OnInit {
     if (body.firstname && body.lastname && body.email && body.password) {
       this.api.register(body).subscribe((res) => {
         if (res.error === 400) {
-          this.toastr.warning(
-            ' تاكد من صحة البيانات المدخلة او ان المستخدم غير موجود '
-          );
+          this.toastr.warning('Invalid entry data or The User already exists');
         } else if (res.success === true) {
           this.router.navigate(['/login']);
-          this.toastr.success('تم انشاء حساب بنجاح', 'مبروك');
+          this.toastr.success('Done', 'Successfully sing up');
         } else {
           console.log(res);
         }
       });
     } else {
-      this.toastr.error('ادخل البيانات المطلوبه ');
+      this.toastr.error('Please enter the required data');
     }
   }
 }

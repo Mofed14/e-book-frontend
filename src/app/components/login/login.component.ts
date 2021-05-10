@@ -40,21 +40,21 @@ export class LoginComponent implements OnInit {
     if (body.email && body.password) {
       this.api.login(body).subscribe((res) => {
         if (res.error === 400) {
-          this.toastr.warning('تاكد من صحة البيانات المدخلة');
+          this.toastr.warning('Invalid entry data');
         } else if (res.error === 404) {
-          this.toastr.error('المستخدم غير موجود ');
+          this.toastr.error('The User not found');
         } else if (res.error === 401) {
-          this.toastr.error('الرقم السري غير صحيح');
+          this.toastr.error('Incorrect password');
         } else if (res.success === true) {
           localStorage.setItem('userData', JSON.stringify(res.userdata));
           this.router.navigate(['/home']);
-          this.toastr.success('تم الدخول بنجاح ');
+          this.toastr.success('Successfully login');
         } else {
           console.log(res);
         }
       });
     } else {
-      this.toastr.error('ادخل البيانات المطلوبه ');
+      this.toastr.error('Please enter the required data');
     }
   }
 }
