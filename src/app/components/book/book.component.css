@@ -111,7 +111,7 @@
     color: #333;
     display: inline-block;
     font-size: 14px;
-    float: right;
+    
 }
 
 .color-menu ul.color li {
@@ -187,12 +187,12 @@
 }
 
 .shop-tab {
-    float: left;
+    
     display: inline-block;
 }
 
 .tab-3 {
-    float: left;
+    
     display: inline-block;
 }
 
@@ -266,7 +266,7 @@
 
 .field-limiter {
     display: inline-block;
-    float: right;
+  
 }
 
 .toolbar-sorter span {
@@ -301,7 +301,7 @@
 
 .toolbar-sorter {
     display: inline-block;
-    float: right;
+    
     margin-right: 30px;
 }
 
@@ -875,7 +875,7 @@
 
 .product-link .product-button {
     display: inline-block;
-    float: left;
+    
     position: relative;
     transition: .5s;
     transform: scale(0.6);
@@ -901,7 +901,7 @@
 
 .product-link .add-to-link {
     display: inline-block;
-    float: right;
+    
     position: relative;
     transition: .5s;
     transform: scale(0.6);

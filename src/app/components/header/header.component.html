@@ -65,51 +65,38 @@
         </div>
     </div>
     <!-- header-mid-area-end -->
-    <!-- main-menu-area-start -->
-    <div class="main-menu-area d-md-none d-none d-lg-block sticky-header-1" id="header-sticky">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="menu-area">
-                        <nav>
-                            <ul>
-                                <li class="active"><a routerLink="/home">Home</a></li>
-                                <li><a routerLink="/home/books">Book</a></li>
-                                <li><a routerLink="/home/browse">Browse</a></li>
-                                <li><a routerLink="/home/aboutus">AboutUs</a></li>
-                                <li><a >Logout</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
+    <!--start --navbar-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+
+          <button class="navbar-toggler" (click)="toggleNavbar()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse"  [class.show]="isOpen" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="homepage">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="books">Books</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="browse">Browse</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="aboutus">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="login">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="register">Register</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </div>
-    <!-- main-menu-area-end -->
-    <!-- mobile-menu-area-start -->
-		<div class="mobile-menu-area d-lg-none d-block fix">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 nav-mobile">
-						<div class="mobile-menu">
-							<nav id="mobile-menu-active" style="display: block;">
-								<ul id="nav">
-									<li class="active"><a routerLink="index">Home</a>
+      </nav>
 
-									</li>
-									<li><a routerLink="books">Book</a>
-									</li>
-
-									<li><a routerLink="browse">Broswe</a></li>
-
-									<li><a routerLink="login">login</a></li>
-									<li><a routerLink="register">register</a></li>
-								</ul>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-    <!-- mobile-menu-area-end -->
+    <!-- end--end -->
 </header>

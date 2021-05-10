@@ -10,7 +10,18 @@ import { ToastrService } from 'ngx-toastr';
 export class HeaderComponent implements OnInit {
   logo = '../assets/images/logo.png';
 
+<<<<<<< HEAD
   constructor(private router: Router, private toastr: ToastrService) {}
+=======
+logo = '../assets/images/logo.png';
+ 
+// toggle in the small screens
+  isOpen :boolean=false;
+
+  toggleNavbar(){
+    this.isOpen = !this.isOpen
+  }
+>>>>>>> bbc08ed77b094e11e8812aaaaa6c9e92e239e421
 
   ngOnInit(): void {}
 
