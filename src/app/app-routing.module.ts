@@ -8,6 +8,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { AuthGuard } from './services/auth.guard';
 import { AnonymousService } from './services/anonymousservice.service';
+import { HomepageComponent } from './components/homepage/homepage.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, canActivate: [AnonymousService] },
@@ -21,6 +23,7 @@ const routes: Routes = [
     component: HomeComponent,
     canActivate: [AuthGuard],
     children: [
+      {path:'homepage',component:HomepageComponent},
       { path: 'books', component: BookComponent },
       { path: 'browse', component: BrowseComponent },
       { path: 'aboutus', component: AboutusComponent },

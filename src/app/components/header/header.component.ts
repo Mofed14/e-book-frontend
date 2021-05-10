@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-logo = '../assets/images/logo.png'
+logo = '../assets/images/logo.png';
+ 
+// toggle in the small screens
+  isOpen :boolean=false;
+
+  toggleNavbar(){
+    this.isOpen = !this.isOpen
+  }
 
   constructor() { }
 
