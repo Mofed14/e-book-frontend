@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
     HeaderComponent,
     FooterComponent,
     AboutusComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,

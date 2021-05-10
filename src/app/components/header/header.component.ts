@@ -1,19 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  logo = '../assets/images/logo.png';
 
-logo = '../assets/images/logo.png'
+  constructor(private router: Router, private toastr: ToastrService) {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  
+  // //////////logout///////////////
 
-  ngOnInit(): void {
-  }
-
+  //   // tslint:disable-next-line:typedef
+  //   logout() {
+  //     if (localStorage.getItem('userData')) {
+  //       localStorage.removeItem('userData');
+  //       this.router.navigate(['/']);
+  //       this.toastr.success('Successfully logout');
+  //     }
+  //   }
 }
