@@ -34,7 +34,6 @@
               "./node_modules/owl.carousel/dist/assets/owl.theme.default.min.css",
               "./node_modules/font-awesome/css/font-awesome.css",
               "./node_modules/flexslider/flexslider.css",
-              "./node_modules/media-style/search.css",
               
               "src/styles.css"
                   
