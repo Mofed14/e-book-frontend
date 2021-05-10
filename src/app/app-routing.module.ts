@@ -9,7 +9,6 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { AuthGuard } from './services/auth.guard';
 import { AnonymousService } from './services/anonymousservice.service';
-import { HomepageComponent } from './components/homepage/homepage.component';
 
 const routes: Routes = [
   {
@@ -28,11 +27,7 @@ const routes: Routes = [
     component: HomeComponent,
     canActivate: [AuthGuard],
     children: [
-<<<<<<< HEAD
       { path: '', component: HomepageComponent },
-=======
-      {path:'homepage',component:HomepageComponent},
->>>>>>> bbc08ed77b094e11e8812aaaaa6c9e92e239e421
       { path: 'books', component: BookComponent },
       { path: 'browse', component: BrowseComponent },
       { path: 'aboutus', component: AboutusComponent },
