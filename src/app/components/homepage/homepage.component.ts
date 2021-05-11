@@ -11,6 +11,7 @@ export class HomepageComponent implements OnInit {
   books: any;
   limit = 8;
   items: any;
+  searchText;
   constructor(private api: ApiService, private toastr: ToastrService) {}
 
   ngOnInit(): void {
@@ -30,11 +31,13 @@ export class HomepageComponent implements OnInit {
     });
   }
 
+  // tslint:disable-next-line:typedef
   getMore() {
     this.books.push(this.listAllBooks((this.limit += 8)));
     // console.log(this.books.push(this.listAllBooks(this.limit + 8)));
   }
 
+  // tslint:disable-next-line:typedef
   getless() {
     this.books.push(this.listAllBooks((this.limit -= 8)));
     // console.log(this.books.push(this.listAllBooks(this.limit + 8)));
