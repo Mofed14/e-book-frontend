@@ -15,11 +15,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
-<<<<<<< HEAD
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
-=======
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
->>>>>>> 65961515c336b3aab616fdf4b01855fed38a3f7c
+
 
 @NgModule({
   declarations: [

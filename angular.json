@@ -53,6 +53,7 @@
               "./node_modules/jquery-countdown/dist/jquery.countdown.min.js",
               "./node_modules/chosen-js/chosen.jquery.min.js"
               
+              
             ]
           },
           "configurations": {
