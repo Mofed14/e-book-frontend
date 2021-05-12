@@ -16,6 +16,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NzRateModule } from 'ng-zorro-antd/rate';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
     Ng2SearchPipeModule,
+    NzRateModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

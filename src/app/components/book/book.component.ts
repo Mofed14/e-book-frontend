@@ -8,7 +8,17 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./book.component.css'],
 })
 export class BookComponent implements OnInit {
+  userid = localStorage.getItem('userData');
   constructor(private api: ApiService, private toastr: ToastrService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getuserbooks();
+  }
+
+  // tslint:disable-next-line:typedef
+  getuserbooks() {
+    this.api.getUserBooksByUserId(this.userid).subscribe((res) => {
+      console.log(res);
+    });
+  }
 }

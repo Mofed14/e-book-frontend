@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
         } else if (res.error === 401) {
           this.toastr.error('Incorrect password');
         } else if (res.success === true) {
-          localStorage.setItem('userData', JSON.stringify(res.userdata));
+          localStorage.setItem('userData', JSON.stringify(res.userdata.id));
           this.router.navigate(['/home']);
           this.toastr.success('Successfully login');
         } else {
