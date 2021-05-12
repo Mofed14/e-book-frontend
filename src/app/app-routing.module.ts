@@ -9,6 +9,10 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { AuthGuard } from './services/auth.guard';
 import { AnonymousService } from './services/anonymousservice.service';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+
+
+
 
 const routes: Routes = [
   {
@@ -31,6 +35,7 @@ const routes: Routes = [
       { path: 'books', component: BookComponent },
       { path: 'browse', component: BrowseComponent },
       { path: 'aboutus', component: AboutusComponent },
+      { path: 'product-details', component: ProductDetailsComponent },
     ],
   },
 ];

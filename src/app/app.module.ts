@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     FooterComponent,
     AboutusComponent,
     HomepageComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,

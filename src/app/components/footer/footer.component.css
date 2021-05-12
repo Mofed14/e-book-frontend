@@ -127,6 +127,10 @@ footer {
     text-decoration: underline;
 }
 
+
+
+/* scroll up*/
+
 a#scrollUp {
     background: #333 none repeat scroll 0 0;
     border: 2px solid #fff;
@@ -142,10 +146,10 @@ a#scrollUp {
     text-align: center;
     width: 40px;
     z-index: 9999;
-    transition: .3s;
-}
-
-a#scrollUp:hover {
+    transition: .3s ;
+  }
+  
+  a#scrollUp:hover {
     background: #f07c29 none repeat scroll 0 0;
     border-color: #f07c29;
-}
+  }

@@ -67,7 +67,7 @@
     <!-- header-mid-area-end -->
     <!--start --navbar-->
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
         <div class="container-fluid">
 
           <button class="navbar-toggler" (click)="toggleNavbar()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,6 +89,9 @@
               </li>
               <li class="nav-item">
                 <a type="submit" (click)="logout()" class="nav-link">Logout</a>
+              </li>
+              <li class="nav-item">
+                <a type="submit"  class="nav-link" routerLink="product-details" >Product Details</a>
               </li>
 
             </ul>
