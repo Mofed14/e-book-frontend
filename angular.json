@@ -34,9 +34,14 @@
               "./node_modules/owl.carousel/dist/assets/owl.theme.default.min.css",
               "./node_modules/font-awesome/css/font-awesome.min.css",
               "./node_modules/flexslider/flexslider.css",
+<<<<<<< HEAD
               "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
 
 
+=======
+              "src/assets/style-files/meanmenu.css",
+              "./node_modules/chosen-js/chosen.min.css",
+>>>>>>> 9acd4c1779943ad091a3228a62db2f4f63fd8dbc
               "src/styles.css"
 
             ],
@@ -51,8 +56,9 @@
               "./node_modules/wowjs/dist/wow.min.js",
               "./node_modules/jquery-parallax.js/parallax.min.js",
               "./node_modules/flexslider/jquery.flexslider-min.js",
-              "./node_modules/jquery-countdown/dist/jquery.countdown.min.js"
-
+              "./node_modules/jquery-countdown/dist/jquery.countdown.min.js",
+              "./node_modules/chosen-js/chosen.jquery.min.js"
+              
             ]
           },
           "configurations": {
