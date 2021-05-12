@@ -4,7 +4,7 @@
     <form>
         <div class="inner-form">
             <div class="input-field first-wrap">
-                <input id="search" type="text" placeholder="What are you looking for?">
+                <input id="search" type="text" name="search" [(ngModel)]="searchText" placeholder="What are you looking for?">
             </div>
 
             <div class="input-field third-wrap">
@@ -90,7 +90,7 @@
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="th">
                         <div class="row">
-                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6" *ngFor="let book of books">
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6" *ngFor="let book of books | filter:searchText">
                                 <!-- single-product-start -->
                                 <div class="product-wrapper mb-40">
                                     <div class="product-img">
