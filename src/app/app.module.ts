@@ -17,7 +17,6 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 <<<<<<< HEAD
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
-=======
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 <<<<<<< HEAD
 import { NzRateModule } from 'ng-zorro-antd/rate';
