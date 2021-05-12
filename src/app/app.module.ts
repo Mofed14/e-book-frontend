@@ -17,7 +17,15 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+import { NzRateModule } from 'ng-zorro-antd/rate';
+=======
+>>>>>>> 65961515c336b3aab616fdf4b01855fed38a3f7c
+>>>>>>> 9acd4c1779943ad091a3228a62db2f4f63fd8dbc
+>>>>>>> 98069324577e86206e5ae3bb518cb7970c0a3b82
 
 @NgModule({
   declarations: [
@@ -42,6 +50,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
     Ng2SearchPipeModule,
+    NzRateModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

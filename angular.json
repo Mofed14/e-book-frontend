@@ -36,6 +36,7 @@
               "./node_modules/flexslider/flexslider.css",
               "src/assets/style-files/meanmenu.css",
               "./node_modules/chosen-js/chosen.min.css",
+              "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
               "src/styles.css"
 
             ],
@@ -52,8 +53,12 @@
               "./node_modules/flexslider/jquery.flexslider-min.js",
               "./node_modules/jquery-countdown/dist/jquery.countdown.min.js",
               "./node_modules/chosen-js/chosen.jquery.min.js"
+<<<<<<< HEAD
               
               
+=======
+
+>>>>>>> 98069324577e86206e5ae3bb518cb7970c0a3b82
             ]
           },
           "configurations": {

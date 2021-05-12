@@ -1,21 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { ToastrService } from 'ngx-toastr';
-
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css', './search.css'],
 })
 export class HomepageComponent implements OnInit {
+  buyform: any;
+  constructor(
+    private api: ApiService,
+    private toastr: ToastrService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
   books: any;
   limit = 8;
   items: any;
   searchText;
-  constructor(private api: ApiService, private toastr: ToastrService) {}
+  value = 1;
+
+  bookid: any;
 
   ngOnInit(): void {
     this.listAllBooks(this.limit);
+    // this.form();
   }
 
   // tslint:disable-next-line:typedef
@@ -23,7 +34,7 @@ export class HomepageComponent implements OnInit {
     this.api.getAllBooks(limit).subscribe((res) => {
       if (res.books.length) {
         this.books = res.books;
-        console.log(this.books.length);
+        // console.log(this.books);
         // console.log(this.books.title);
       } else {
         this.toastr.warning('No books yet');
@@ -42,4 +53,26 @@ export class HomepageComponent implements OnInit {
     this.books.push(this.listAllBooks((this.limit -= 8)));
     // console.log(this.books.push(this.listAllBooks(this.limit + 8)));
   }
+
+  // tslint:disable-next-line:typedef
+  // form() {
+  //   this.buyform = this.fb.group({
+  //     user_id: [localStorage.getItem('userData')],
+  //     book_id: [this.bookid],
+  //   });
+  // }
+
+  // tslint:disable-next-line:typedef
+  // buyboo() {
+  //   const body = {
+  //     user_id: this.buyform.value.user_id,
+  //     book_id: this.buyform.value.book_id,
+  //   };
+  //   console.log(body);
+
+  //   this.api.buyBook(body).subscribe((res) => {
+  //     console.log(body);
+  //     console.log(res);
+  //   });
+  // }
 }

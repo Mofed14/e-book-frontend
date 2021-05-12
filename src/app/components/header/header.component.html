@@ -6,9 +6,12 @@
             <div class="row">
                 <div class="col-lg-3 col-md-5 col-12">
                     <div class="header-search">
-                        <form action="#">
-                            <input type="text" placeholder="Search entire store here...">
-                            <a><i class="fa fa-search"></i></a>
+                        <form>
+                            <input type="text" name="input" [(ngModel)]="input" placeholder="Search entire store here...">
+                            <a (click)="search()"><i class="fa fa-search"></i></a>
+                            <div class="results">
+                              Results: {{books && books.length}}
+                          </div>
                         </form>
                     </div>
                 </div>
