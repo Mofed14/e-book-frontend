@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { ToastrService } from 'ngx-toastr';
-import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -10,12 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HomepageComponent implements OnInit {
   buyform: any;
-  constructor(
-    private api: ApiService,
-    private toastr: ToastrService,
-    private fb: FormBuilder,
-    private router: Router
-  ) {}
+  constructor(private api: ApiService, private toastr: ToastrService) {}
   books: any;
   searchText;
   limit = 8;

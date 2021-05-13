@@ -162,7 +162,7 @@ export class ProductDetailsComponent implements OnInit {
         );
       } else if (res.success === true) {
         this.toastr.success('You successfully rated book');
-        this.getrates(); // to get rate automatic and show reviews when add rate
+        this.getrates(); // to get rates automatic and show reviews when add rate
       } else {
         console.log(res);
       }

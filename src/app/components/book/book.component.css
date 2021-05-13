@@ -717,10 +717,14 @@
   width: 100%;
 }
 
+img {
+  margin-left: 0;
+}
+
 .quick-view {
-  left: 50%;
+  left: 0;
   position: absolute;
-  right: 50%;
+  right: 0;
   text-align: center;
   top: 50%;
   transform: translateY(-50%);
