@@ -718,9 +718,9 @@
 }
 
 .quick-view {
-  left: 0;
+  left: 50%;
   position: absolute;
-  right: 0;
+  right: 50%;
   text-align: center;
   top: 50%;
   transform: translateY(-50%);
@@ -1080,9 +1080,3 @@
   color: #e74208;
   font-weight: bold;
 }
-
-
-
-
-
-
