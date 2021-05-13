@@ -174,7 +174,7 @@ export class ProductDetailsComponent implements OnInit {
   getrates() {
     this.api.getBookRatingByBookid(this.bookid).subscribe((res) => {
       if (res.error === 500) {
-        this.toastr.info('This book don`t have any rate');
+        this.toastr.info('This book doesn`t have any rate');
       } else if (res.success === true) {
         this.rates = res.books.length;
       }
