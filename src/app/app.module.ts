@@ -17,19 +17,13 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-<<<<<<< HEAD
 import { NzRateModule } from 'ng-zorro-antd/rate';
-=======
-<<<<<<< HEAD
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-=======
-<<<<<<< HEAD
-import { NzRateModule } from 'ng-zorro-antd/rate';
-=======
->>>>>>> 65961515c336b3aab616fdf4b01855fed38a3f7c
->>>>>>> 9acd4c1779943ad091a3228a62db2f4f63fd8dbc
->>>>>>> 98069324577e86206e5ae3bb518cb7970c0a3b82
->>>>>>> 9a2c4cf4d36324f5c121e863620ea41de9069bf6
+import {
+  NgbPaginationModule,
+  NgbAlertModule,
+} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -55,6 +49,9 @@ import { NzRateModule } from 'ng-zorro-antd/rate';
     ToastrModule.forRoot(), // ToastrModule added
     Ng2SearchPipeModule,
     NzRateModule,
+    NgbModule,
+    NgbPaginationModule,
+    NgbAlertModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

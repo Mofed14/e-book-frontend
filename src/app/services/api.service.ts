@@ -80,6 +80,16 @@ export class ApiService {
       );
   }
 
+  getbookbybookid(bookid): Observable<any> {
+    return this.http
+      .get(url + '/api/book/book.php?id=' + bookid, this.options)
+      .pipe(
+        map((res) => {
+          return res as any;
+        })
+      );
+  }
+
   getBookRatingByBookid(bookid): Observable<any> {
     return this.http
       .get(url + '/api/book/rating.php?id=' + bookid, this.options)

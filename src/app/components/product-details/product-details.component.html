@@ -7,19 +7,12 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="flexslider">
-<<<<<<< HEAD
 
-                            <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 1200%; transition-duration: 0s; transform: translate3d(-786px, 0px, 0px);"><li data-thumb="img/product/8.jpeg" class="clone" aria-hidden="true" style="width: 262px; margin-right: 0px; float: left; display: block;">
-                                      <img src="../../../assets/images/12.jpeg" alt="woman" draggable="false">
-                                    </li>
-=======
-                                
                             <div class="flex-viewport" style="overflow: hidden; position: relative;">
                                <!-- <ul class="slides" style="width: 1200%; transition-duration: 0.6s; transform: translate3d(-1048px, 0px, 0px);">
                                     <li data-thumb="../../../assets/images/1.jpeg" class="clone" aria-hidden="true" style="width: 262px; margin-right: 0px; float: left; display: block;">    -->
-                                      <img src="../../../assets/images/14.jpeg" alt="woman" draggable="false">
-                              <!--      </li>       
->>>>>>> 9a2c4cf4d36324f5c121e863620ea41de9069bf6
+                                      <img src="../../../{{bookdata.image}}" alt="woman" draggable="false">
+                              <!--      </li>
                                     <li data-thumb="img/product/1.jpeg" style="width: 262px; margin-right: 0px; float: left; display: block;" class="" data-thumb-alt="">
                                       <img src="img/product/1.jpeg" alt="woman" draggable="false">
                                     </li>
@@ -34,15 +27,15 @@
                                     </li>
                                 <li data-thumb="img/product/1.jpeg" style="width: 262px; margin-right: 0px; float: left; display: block;" class="clone" aria-hidden="true">
                                       <img src="img/product/1.jpeg" alt="woman" draggable="false">
-                                    </li>                   
+                                    </li>
                                 </ul>    -->
-                            </div>      
+                            </div>
            <!--                 <ol class="flex-control-nav flex-control-thumbs">
                                 <li><img src="img/product/1.jpeg" class="" draggable="false"></li>
                                 <li><img src="img/product/5.jpeg" draggable="false" class=""></li>
                                 <li><img src="img/product/7.jpeg" draggable="false" class=""></li>
                                 <li><img src="img/product/8.jpeg" draggable="false" class="flex-active"></li>
-                            </ol>               
+                            </ol>
                             <ul class="flex-direction-nav">
                                 <li class="flex-nav-prev"><a class="flex-prev" href="#">Previous</a></li>
                                 <li class="flex-nav-next"><a class="flex-next" href="#">Next</a></li>
@@ -53,7 +46,7 @@
                         <div class="col-lg-5 col-md-6 col-12">
                             <div class="product-info-main">
                                 <div class="page-title">
-                                    <h1>Savvy Shoulder Tote</h1>
+                                    <h1>{{bookdata.title}}</h1>
                                 </div>
                                 <div class="product-info-stock-sku">
                                     <span>In stock</span>
@@ -63,30 +56,26 @@
                                     </div>
                                 </div>
                                 <div class="product-reviews-summary">
-                                    <div class="rating-summary">
-                                        <a href="#"><i class="fa fa-star"></i></a>
-                                        <a href="#"><i class="fa fa-star"></i></a>
-                                        <a href="#"><i class="fa fa-star"></i></a>
-                                        <a href="#"><i class="fa fa-star"></i></a>
-                                        <a href="#"><i class="fa fa-star"></i></a>
-                                    </div>
+                                    <div class="rating-summary" >
+                                      <ngb-rating [max]="5" (click)="addrate()" [(ngModel)]="currentRate"> </ngb-rating>                                    </div>
                                     <div class="reviews-actions">
-                                        <a href="#">3 Reviews</a>
-                                        <a href="#" class="view">Add Your Review</a>
+                                      <a>{{rates}} Reviews </a>
+                                        <a disabled class="view">Add Your Review | </a>
                                     </div>
                                 </div>
                                 <div class="product-info-price">
                                     <div class="price-final">
-                                        <span>$34.00</span>
+                                        <span>${{bookdata.price}}</span>
                                       </div>
-                                      <a class="btn btn-primary" (click)="buybook()">Buy book</a>
-                                </div>
-                                <div class="product-add-form">
-                                    <form action="#">
-                                        <a>Add funds</a>
+                                      <a (click)="open(mofed)" class="btn btn-primary">Add funds</a>
+
+                                    </div>
+                                    <div class="product-add-form">
+                                      <form>
+                                      <a  (click)="buybook()">Buy book</a>
                                     </form>
                                 </div>
-                                <div class="product-social-links">
+                                <!-- <div class="product-social-links">
                                     <div class="product-addto-links">
                                         <a href="#"><i class="fa fa-heart"></i></a>
                                         <a href="#"><i class="fa fa-pie-chart"></i></a>
@@ -95,7 +84,7 @@
                                     <div class="product-addto-links-text">
                                         <p>Powerwalking to the gym or strolling to the local coffeehouse, the Savvy Shoulder Tote lets you stash your essentials in sporty style! A top-loading compartment provides quick and easy access to larger items, while zippered pockets on the front and side hold cash, credit cards and phone.</p>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -105,22 +94,24 @@
                 <div class="product-info-area mt-80">
                     <!-- Nav tabs -->
                     <ul class="nav">
-                        <li><a class="active" href="#Details" data-toggle="tab">Details</a></li>
-                        <li><a href="#Reviews" data-toggle="tab">Reviews 3</a></li>
+                        <li><a data-toggle="tab">Details</a></li>
+                        <!-- <li><a class="active" href="#Reviews" data-toggle="tab">Reviews 3</a></li> -->
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="Details">
                             <div class="valu">
-                              <p>The sporty Joust Duffle Bag can't be beat - not in the gym, not on the luggage carousel, not anywhere. Big enough to haul a basketball or soccer ball and some sneakers with plenty of room to spare, it's ideal for athletes with places to go.</p>
+                              <p>One of the books I love most is {{bookdata.title}}. It's a novel that I had as a prize in my school. This novel took me a good amount of time to finish because this book is very thick. It is part of a series.
+
+                              </p>
                               <ul>
-                                <li><i class="fa fa-circle"></i>Dual top handles.</li>
-                                <li><i class="fa fa-circle"></i>Adjustable shoulder strap.</li>
-                                <li><i class="fa fa-circle"></i>Full-length zipper.</li>
-                                <li><i class="fa fa-circle"></i>L 29" x W 13" x H 11".</li>
+                                <li><i class="fa fa-user"></i>Author Name is {{bookdata.auther_name}}</li>
+                                <li><i class="fa fa-list"></i>This book is classified as {{bookdata.category_name}}</li>
+                                <li><i class="fa fa-book"></i>{{bookdata.pages}} pages</li>
+                                <li><i class="fa fa-usd"></i>{{bookdata.price}} $</li>
                               </ul>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="Reviews">
+                        <!-- <div class="tab-pane fade" id="Reviews">
                             <div class="valu valu-2">
                                 <div class="section-title mb-60 mt-60">
                                     <h2>Customer Reviews</h2>
@@ -236,7 +227,7 @@
                                     <a href="#">Submit Review</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <!-- product-info-area-end -->
@@ -246,25 +237,9 @@
                         <h3>upsell products</h3>
                     </div>
                     <div class="tab-active-2 owl-carousel owl-loaded owl-drag">
-<<<<<<< HEAD
-                        <!-- single-product-start -->
 
-                        <!-- single-product-end -->
-                        <!-- single-product-start -->
 
-                        <!-- single-product-end -->
-                        <!-- single-product-start -->
-
-                        <!-- single-product-end -->
-                        <!-- single-product-start -->
-
-                        <!-- single-product-end -->
-                    <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1150px, 0px, 0px); transition: all 1s ease 0s; width: 2300px;"><div class="owl-item cloned" style="width: 230px;"><div class="product-wrapper">
-=======
-                        
-                        
                                           <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-690px, 0px, 0px); transition: all 1s ease 0s; width: 2300px;"><div class="owl-item cloned" style="width: 230px;"><div class="product-wrapper">
->>>>>>> 9a2c4cf4d36324f5c121e863620ea41de9069bf6
                             <div class="product-img">
                                 <a href="#">
                                     <img src="img/product/3.jpeg" alt="book" class="primary">
@@ -394,13 +369,8 @@
                                         <li><a href="product-details.html" title="Details"><i class="fa fa-external-link"></i></a></li>
                                     </ul>
                                 </div>
-<<<<<<< HEAD
                             </div>
-                        </div></div><div class="owl-item" style="width: 230px;"><div class="product-wrapper">
-=======
-                            </div>	
                         </div></div><div class="owl-item active" style="width: 230px;"><div class="product-wrapper">
->>>>>>> 9a2c4cf4d36324f5c121e863620ea41de9069bf6
                             <div class="product-img">
                                 <a href="#">
                                     <img src="img/product/1.jpeg" alt="book" class="primary">
@@ -443,13 +413,8 @@
                                         <li><a href="product-details.html" title="Details"><i class="fa fa-external-link"></i></a></li>
                                     </ul>
                                 </div>
-<<<<<<< HEAD
                             </div>
-                        </div></div><div class="owl-item" style="width: 230px;"><div class="product-wrapper">
-=======
-                            </div>	
                         </div></div><div class="owl-item active" style="width: 230px;"><div class="product-wrapper">
->>>>>>> 9a2c4cf4d36324f5c121e863620ea41de9069bf6
                             <div class="product-img">
                                 <a href="#">
                                     <img src="img/product/3.jpeg" alt="book" class="primary">
@@ -534,13 +499,8 @@
                                         <li><a href="product-details.html" title="Details"><i class="fa fa-external-link"></i></a></li>
                                     </ul>
                                 </div>
-<<<<<<< HEAD
                             </div>
-                        </div></div><div class="owl-item active" style="width: 230px;"><div class="product-wrapper">
-=======
-                            </div>	
                         </div></div><div class="owl-item" style="width: 230px;"><div class="product-wrapper">
->>>>>>> 9a2c4cf4d36324f5c121e863620ea41de9069bf6
                             <div class="product-img">
                                 <a href="#">
                                     <img src="img/product/7.jpeg" alt="book" class="primary">
@@ -584,13 +544,8 @@
                                         <li><a href="product-details.html" title="Details"><i class="fa fa-external-link"></i></a></li>
                                     </ul>
                                 </div>
-<<<<<<< HEAD
                             </div>
-                        </div></div><div class="owl-item cloned active" style="width: 230px;"><div class="product-wrapper">
-=======
-                            </div>	
                         </div></div><div class="owl-item cloned" style="width: 230px;"><div class="product-wrapper">
->>>>>>> 9a2c4cf4d36324f5c121e863620ea41de9069bf6
                             <div class="product-img">
                                 <a href="#">
                                     <img src="img/product/1.jpeg" alt="book" class="primary">
@@ -1167,3 +1122,29 @@
         </div>    -->
     </div>
 </div>
+
+
+
+
+<ng-template #mofed let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group" [formGroup]="addfundsform">
+        <label>Amount</label>
+        <div class="input-group">
+          <input type="number"  class="form-control"  name="amount" formControlName="amount" >
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" [disabled]="!addfundsform.valid" class="btn btn-outline-dark" (click)="addfunds()" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+

@@ -17,9 +17,9 @@ export class HomepageComponent implements OnInit {
     private router: Router
   ) {}
   books: any;
+  searchText;
   limit = 8;
   items: any;
-  searchText;
   value = 1;
 
   bookid: any;

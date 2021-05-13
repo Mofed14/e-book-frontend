@@ -27,8 +27,9 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/ngx-toastr/toastr.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
               "./node_modules/animate.css/animate.css",
               "./node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
               "./node_modules/owl.carousel/dist/assets/owl.theme.default.min.css",
@@ -53,12 +54,6 @@
               "./node_modules/flexslider/jquery.flexslider-min.js",
               "./node_modules/jquery-countdown/dist/jquery.countdown.min.js",
               "./node_modules/chosen-js/chosen.jquery.min.js"
-<<<<<<< HEAD
-              
-              
-=======
-
->>>>>>> 98069324577e86206e5ae3bb518cb7970c0a3b82
             ]
           },
           "configurations": {
