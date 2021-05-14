@@ -23,11 +23,11 @@
     "@ng-bootstrap/ng-bootstrap": "^9.1.1",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.0.0",
-    "chosen-js": "^1.8.7",
+    
     "flexslider": "^2.6.2",
     "font-awesome": "^4.7.0",
     "jquery": "^1.12.0",
-    "jquery-countdown": "^2.2.0",
+    
     "jquery-parallax.js": "^1.5.0",
     "modernizr": "^3.11.7",
     "ng-zorro-antd": "^11.4.1",
