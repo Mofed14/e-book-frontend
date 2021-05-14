@@ -129,27 +129,3 @@ footer {
 
 
 
-/* scroll up*/
-
-a#scrollUp {
-    background: #333 none repeat scroll 0 0;
-    border: 2px solid #fff;
-    border-radius: 100%;
-    bottom: 35px;
-    color: #fff;
-    display: none;
-    font-size: 20px;
-    height: 40px;
-    line-height: 32px;
-    position: fixed;
-    right: 12px;
-    text-align: center;
-    width: 40px;
-    z-index: 9999;
-    transition: .3s ;
-  }
-  
-  a#scrollUp:hover {
-    background: #f07c29 none repeat scroll 0 0;
-    border-color: #f07c29;
-  }

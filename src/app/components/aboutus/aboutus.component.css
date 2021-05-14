@@ -1,0 +1,48 @@
+
+section h1{
+    padding-top: 20px;
+}
+
+.row{
+    margin:30px 0 30px 0;
+}
+
+img{
+    width:380px;
+    height:400px
+}
+
+.img2{
+    margin:0 40px 30px 0px;
+    padding-left: 0px;
+    
+}
+
+
+
+/* media for all screens */
+
+
+/* start style for small screen  */
+
+
+@media (max-width:540px){
+    img{
+        width:200px;
+        height:250px
+    }
+}
+
+/* end style for small screen  */
+
+
+/* start style for medium screen */
+
+@media(max-width:720px){
+    img{
+        width:300px;
+        height:350px
+    }
+}
+
+/* end style for medium screen */
