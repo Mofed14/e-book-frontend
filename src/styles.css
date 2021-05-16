@@ -37,7 +37,7 @@ button:focus {
 img {
   max-width: 100%;
   height: auto;
-  margin-left:50px
+  margin-left: 50px;
 }
 
 .fix {
@@ -1784,9 +1784,6 @@ body {
   }
 }
 
-
-
-
 /* scroll up*/
 
 a#scrollUp {
@@ -1804,11 +1801,10 @@ a#scrollUp {
   text-align: center;
   width: 40px;
   z-index: 9999;
-  transition: .3s ;
+  transition: 0.3s;
 }
 
 a#scrollUp:hover {
   background: #f07c29 none repeat scroll 0 0;
   border-color: #f07c29;
 }
-

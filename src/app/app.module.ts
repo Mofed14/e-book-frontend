@@ -19,13 +19,15 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NzRateModule } from 'ng-zorro-antd/rate';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NZ_ICONS } from 'ng-zorro-antd/icon';
+import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
 import {
   NgbPaginationModule,
   NgbAlertModule,
 } from '@ng-bootstrap/ng-bootstrap';
 import { ViewCartComponent } from './components/view-cart/view-cart.component';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 
 @NgModule({
   declarations: [
@@ -52,12 +54,13 @@ import { ViewCartComponent } from './components/view-cart/view-cart.component';
     ToastrModule.forRoot(), // ToastrModule added
     Ng2SearchPipeModule,
     NzRateModule,
+    NzEmptyModule,
     NgbModule,
     NgbPaginationModule,
     NgbAlertModule,
-    
+    NzBreadCrumbModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
+  providers: [{ provide: NZ_I18N, useValue: en_US }],
 })
 export class AppModule {}

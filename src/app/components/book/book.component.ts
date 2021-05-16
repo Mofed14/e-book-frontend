@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 export class BookComponent implements OnInit {
   userid = localStorage.getItem('userData');
   books: any;
+  error: any;
   constructor(private api: ApiService, private toastr: ToastrService) {}
 
   ngOnInit(): void {
@@ -19,8 +20,8 @@ export class BookComponent implements OnInit {
   // tslint:disable-next-line:typedef
   getuserbooks() {
     this.api.getUserBooksByUserId(this.userid).subscribe((res) => {
-      console.log(res);
       if (res.error === 404) {
+        this.error = res.error;
         this.toastr.info('You don`t have any books ');
       } else if (res.success === true) {
         this.books = res.books;
