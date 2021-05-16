@@ -24,40 +24,25 @@
                     <div class="my-cart">
                         <ul>
                             <li><a><i class="fa fa-shopping-cart"></i>My Cart</a>
-                                <span>2</span>
+                                <span *ngIf="lsbooks">{{lsbooks.length}}</span>
                                 <div class="mini-cart-sub">
-                                    <div class="cart-product">
+                                    <div class="cart-product" *ngFor="let item of lsbooks">
                                         <div class="single-cart">
                                             <div class="cart-img">
-                                                <a><img src="img/product/1.jpeg" alt="book"></a>
+                                                <a><img src="../../../{{item.image}}" alt="book"></a>
                                             </div>
                                             <div class="cart-info">
-                                                <h5><a>Joust Duffle Bag</a></h5>
-                                                <p>1 x £60.00</p>
+                                                <h5><a>{{item.title}}</a></h5>
+                                                <p>{{item.price}}</p>
                                             </div>
                                             <div class="cart-icon">
                                                 <a><i class="fa fa-remove"></i></a>
                                             </div>
                                         </div>
-                                        <div class="single-cart">
-                                            <div class="cart-img">
-                                                <a><img src="img/product/3.jpeg" alt="book"></a>
-                                            </div>
-                                            <div class="cart-info">
-                                                <h5><a>Chaz Kangeroo Hoodie</a></h5>
-                                                <p>1 x £52.00</p>
-                                            </div>
-                                            <div class="cart-icon">
-                                                <a><i class="fa fa-remove"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cart-totals">
-                                        <h5>Total <span>£12.00</span></h5>
                                     </div>
                                     <div class="cart-bottom">
-                                        <a class="view-cart">view cart</a>
-                                        <a>Check out</a>
+                                        <a *ngIf="lsbooks" routerLink="viewcart" class="view-cart">view cart</a>
+                                        <a *ngIf="lsbooks"  (click)="removelocalstorage()">clear cart</a>
                                     </div>
                                 </div>
                             </li>

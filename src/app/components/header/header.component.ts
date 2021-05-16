@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ApiService } from '../../services/api.service';
-
+import { DataService } from '../../services/data.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -16,11 +16,14 @@ export class HeaderComponent implements OnInit {
   limit = 24;
   input: any;
   array: any;
+  lsbooks: [];
+  old: any;
 
   constructor(
     private router: Router,
     private toastr: ToastrService,
-    private api: ApiService
+    private api: ApiService,
+    public data: DataService
   ) {}
 
   // toggle in the small screens
@@ -33,6 +36,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.listAllBooks(this.limit);
+    this.addbookstocart();
   }
   ////////// logout ///////////////
 
@@ -50,7 +54,6 @@ export class HeaderComponent implements OnInit {
     this.api.getAllBooks(limit).subscribe((res) => {
       this.books = res.books;
       this.array = res.books;
-      console.log(this.books);
     });
   }
 
@@ -61,9 +64,19 @@ export class HeaderComponent implements OnInit {
     this.books.map((book) => {
       if (book.title.includes(this.input) || book.price.includes(this.input)) {
         res.push(book);
-        console.log(book);
       }
     });
     this.books = res;
+  }
+
+  addbookstocart() {
+    // this.data.addbookstocart();
+    this.lsbooks = this.data.storagebooks;
+  }
+
+  removelocalstorage() {
+    localStorage.removeItem(localStorage.getItem('userData'));
+    this.lsbooks = [];
+    // this.listAllBooks(this.limit);
   }
 }

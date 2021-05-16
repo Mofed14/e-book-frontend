@@ -24,6 +24,7 @@ import {
   NgbPaginationModule,
   NgbAlertModule,
 } from '@ng-bootstrap/ng-bootstrap';
+import { ViewCartComponent } from './components/view-cart/view-cart.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {
     AboutusComponent,
     HomepageComponent,
     ProductDetailsComponent,
+    ViewCartComponent,
   ],
   imports: [
     BrowserModule,

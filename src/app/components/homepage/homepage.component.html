@@ -60,7 +60,7 @@
                             </ul>
                         </div> -->
                         <div class="list-page">
-                            <p>Items {{books.length}}</p>
+                            <p>Items {{array.length}}</p>
                         </div>
                     </div>
                     <!-- <div class="field-limiter">
@@ -111,25 +111,26 @@
                                         </div>
                                         <div class="product-details text-center">
                                           <div class="product-rating">
-                                            <!-- <nz-rate [(ngModel)]="value" nzAllowHalf></nz-rate> -->
+                                            <nz-rate  [(ngModel)]="value"  (click)="open(mymodal)"  nzAllowHalf></nz-rate>
+
                                           </div>
                                         <h4><a>{{book.title}}</a></h4>
                                         <div class="product-price">
                                             <ul>
-                                                <li>{{book.price}}</li>
+                                                <li>{{book.price}}$</li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <!-- <div class="product-link">
+                                    <div class="product-link">
                                         <div class="product-button">
-                                            <a (click)="buyboo()" title="Add to cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a (click)="getdata(book)" title="Add to cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                         </div>
                                         <div class="add-to-link">
                                             <ul>
                                                 <li><a title="Details"><i class="fa fa-external-link"></i></a></li>
                                             </ul>
                                         </div>
-                                    </div> -->
+                                    </div>
                                 </div>
                                 <!-- single-product-end -->
                               </div>
@@ -211,5 +212,21 @@
     </div>
 </div>
 
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add Review</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    To add your review you should to buy the book!
+    Are you want to buy this book?
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" routerLink="product-details/{{bookid}}" (click)="modal.close('Save click')">Ok</button>
+  </div>
+</ng-template>
 
 

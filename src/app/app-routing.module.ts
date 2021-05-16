@@ -10,6 +10,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { AuthGuard } from './services/auth.guard';
 import { AnonymousService } from './services/anonymousservice.service';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ViewCartComponent } from './components/view-cart/view-cart.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,7 @@ const routes: Routes = [
       { path: 'browse', component: BrowseComponent },
       { path: 'aboutus', component: AboutusComponent },
       { path: 'product-details/:id', component: ProductDetailsComponent },
+      { path: 'viewcart', component: ViewCartComponent },
     ],
   },
 ];

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -19,13 +19,15 @@ export class ProductDetailsComponent implements OnInit {
   currentRate = 5;
   rateform: any;
   rates: any;
+  localstorage: void;
 
   constructor(
     private api: ApiService,
     private toastr: ToastrService,
     private fb: FormBuilder,
     private route: ActivatedRoute,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -52,7 +54,6 @@ export class ProductDetailsComponent implements OnInit {
       book_id: this.buyform.value.book_id,
     };
     this.api.buyBook(body).subscribe((res) => {
-      console.log(res);
       if (res.error === 422) {
         this.toastr.show(
           'You doesn`t have enough balance or You already have this book in your library'
@@ -62,6 +63,7 @@ export class ProductDetailsComponent implements OnInit {
         );
       } else if (res.success === true) {
         this.toastr.success('user successfully purchased book');
+        this.router.navigate(['/']);
       } else {
         console.log(res);
       }
@@ -178,6 +180,8 @@ export class ProductDetailsComponent implements OnInit {
         this.toastr.info('This book doesn`t have any rate');
       } else if (res.success === true) {
         this.rates = res.books.length;
+      } else {
+        console.log(res);
       }
     });
   }

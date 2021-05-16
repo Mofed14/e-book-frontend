@@ -1,25 +1,43 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { ToastrService } from 'ngx-toastr';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { DataService } from '../../services/data.service';
+import { Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css', './search.css'],
 })
 export class HomepageComponent implements OnInit {
+  book: any;
+  constructor(
+    private api: ApiService,
+    private toastr: ToastrService,
+    private modalService: NgbModal,
+    public dataservice: DataService
+  ) {}
   buyform: any;
-  constructor(private api: ApiService, private toastr: ToastrService) {}
+  rates: any;
+  array = [];
+  bookid: any;
+  forms: any;
   books: any;
   searchText;
   limit = 8;
   items: any;
-  value = 1;
-
-  bookid: any;
+  value = 5;
+  closeResult: string;
+  keybookdata = localStorage.getItem('userData');
+  // هخلي اليوزر المتخذن هو المفتاح بتاع الكتب اللي هتتخزن
+  data;
+  private subject = new Subject<any>();
 
   ngOnInit(): void {
     this.listAllBooks(this.limit);
     // this.form();
+    // console.log(this.bookid);
   }
 
   // tslint:disable-next-line:typedef
@@ -27,8 +45,10 @@ export class HomepageComponent implements OnInit {
     this.api.getAllBooks(limit).subscribe((res) => {
       if (res.books.length) {
         this.books = res.books;
-        // console.log(this.books);
-        // console.log(this.books.title);
+        this.array = res.books.map((result) => {
+          this.bookid = result.id;
+        });
+        console.log(this.books);
       } else {
         this.toastr.warning('No books yet');
       }
@@ -47,25 +67,38 @@ export class HomepageComponent implements OnInit {
     // console.log(this.books.push(this.listAllBooks(this.limit + 8)));
   }
 
-  // tslint:disable-next-line:typedef
-  // form() {
-  //   this.buyform = this.fb.group({
-  //     user_id: [localStorage.getItem('userData')],
-  //     book_id: [this.bookid],
-  //   });
-  // }
+  open(content) {
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
 
-  // tslint:disable-next-line:typedef
-  // buyboo() {
-  //   const body = {
-  //     user_id: this.buyform.value.user_id,
-  //     book_id: this.buyform.value.book_id,
-  //   };
-  //   console.log(body);
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
 
-  //   this.api.buyBook(body).subscribe((res) => {
-  //     console.log(body);
-  //     console.log(res);
-  //   });
-  // }
+  getdata(event) {
+    ////////// هتجيب الداتا القديمه وتضيف ليها الجديده عشان اي كتاب اضغط عليه اضيفه في الوكل استورج
+    const oldobject = JSON.parse(localStorage.getItem(this.keybookdata)) || [];
+    if (oldobject.length >= 5) {
+      this.toastr.warning('The cart is full');
+    } else {
+      oldobject.push(event);
+      localStorage.setItem(this.keybookdata, JSON.stringify(oldobject));
+      this.dataservice.addbookstocart();
+    }
+  }
 }
