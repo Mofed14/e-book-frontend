@@ -78,5 +78,6 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem(localStorage.getItem('userData'));
     this.lsbooks = [];
     // this.listAllBooks(this.limit);
+    this.router.navigate(['/']);
   }
 }
