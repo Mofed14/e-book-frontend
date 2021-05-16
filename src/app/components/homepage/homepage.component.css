@@ -1,7 +1,7 @@
 /*----------------------------------------*/
 /*  18. Shop page
 /*----------------------------------------*/
-
+/*
 .breadcrumbs-area {
   border-bottom: 1px solid #e5e5e5;
   padding: 12px 0;
@@ -38,13 +38,14 @@
 
 .breadcrumbs-menu ul li:last-child:before {
   display: none;
-}
+}                                */
 
-.section-title-5 h2 {
+.section-title-5 h4 {
   color: #3f3f3f;
   display: inline-block;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
+  margin-top: 20px;
   line-height: 20px;
   padding: 30px 0 13px;
   position: relative;
@@ -52,7 +53,7 @@
   margin-bottom: 0;
 }
 
-.section-title-5 h2:before {
+.section-title-5 h4:before {
   background: #f07c29 none repeat scroll 0 0;
   bottom: 0;
   content: "";
@@ -407,7 +408,7 @@
   color: #707070;
   margin: 30px 0 20px;
   font-size: 15px;
-}
+}   
 
 /*----------------------------------------*/
 /*  4. Slider area

@@ -20,6 +20,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NzRateModule } from 'ng-zorro-antd/rate';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
 import {
   NgbPaginationModule,
   NgbAlertModule,
@@ -54,6 +55,7 @@ import { ViewCartComponent } from './components/view-cart/view-cart.component';
     NgbModule,
     NgbPaginationModule,
     NgbAlertModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
