@@ -92,7 +92,7 @@
                                         </div>
                                         <div class="product-details text-center">
                                           <div class="product-rating">
-                                            <nz-rate  [(ngModel)]="value"  (click)="open(mymodal)"  nzAllowHalf></nz-rate>
+                                            <nz-rate  [(ngModel)]="value" (click)="showConfirm(book.id)"   nzAllowHalf></nz-rate>
 
                                           </div>
                                         <h4><a>{{book.title}}</a></h4>

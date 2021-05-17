@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { ToastrService } from 'ngx-toastr';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { DataService } from '../../services/data.service';
-import { Observable } from 'rxjs';
 import { Subject } from 'rxjs';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -15,8 +17,9 @@ export class HomepageComponent implements OnInit {
   constructor(
     private api: ApiService,
     private toastr: ToastrService,
-    private modalService: NgbModal,
-    public dataservice: DataService
+    private modal: NzModalService,
+    public dataservice: DataService,
+    private router: Router
   ) {}
   buyform: any;
   rates: any;
@@ -67,27 +70,15 @@ export class HomepageComponent implements OnInit {
     // console.log(this.books.push(this.listAllBooks(this.limit + 8)));
   }
 
-  open(content) {
-    this.modalService
-      .open(content, { ariaLabelledBy: 'modal-basic-title' })
-      .result.then(
-        (result) => {
-          this.closeResult = `Closed with: ${result}`;
-        },
-        (reason) => {
-          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-        }
-      );
-  }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
+  showConfirm(id): void {
+    this.modal.confirm({
+      nzTitle: '<i>Do you Want to review this book?</i>',
+      nzContent: '<b>If yes, you should buy this book</b>',
+      nzOnOk: () => {
+        console.log('OK');
+        this.router.navigate(['home/product-details/' + id]);
+      },
+    });
   }
 
   getdata(event) {

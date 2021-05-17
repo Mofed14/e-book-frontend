@@ -1085,3 +1085,7 @@ img {
   color: #e74208;
   font-weight: bold;
 }
+
+button {
+  margin-right: 8px;
+}

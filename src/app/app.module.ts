@@ -28,6 +28,8 @@ import {
 } from '@ng-bootstrap/ng-bootstrap';
 import { ViewCartComponent } from './components/view-cart/view-cart.component';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzBackTopModule } from 'ng-zorro-antd/back-top';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,8 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
     NgbPaginationModule,
     NgbAlertModule,
     NzBreadCrumbModule,
+    NzBackTopModule,
+    NzModalModule,
   ],
   bootstrap: [AppComponent],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
