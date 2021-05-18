@@ -1,162 +1,67 @@
-body {
-  color: #000;
-  overflow-x: hidden;
-  height: 100%;
-  background-image: linear-gradient(to right, #d500f9, #ffd54f);
-  background-repeat: no-repeat;
+.register {
+  height: 150%;
+  background-color: #2e3439;
+  color: #c2c8ce !important;
 }
 
-input,
-textarea {
-  background-color: #f3e5f5;
-  border-radius: 50px !important;
-  padding: 12px 15px 12px 15px !important;
-  width: 100%;
-  box-sizing: border-box;
-  border: none !important;
-  border: 1px solid #f3e5f5 !important;
-  font-size: 16px !important;
-  color: #000 !important;
-  font-weight: 400;
-}
-
-input:focus,
-textarea:focus {
-  -moz-box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
-  border: 1px solid #d500f9 !important;
-  outline-width: 0;
-  font-weight: 400;
-}
-
-button:focus {
-  -moz-box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
-  outline-width: 0;
-}
-
-.card {
-  border-radius: 0;
-  border: none;
-}
-
-.card1 {
-  width: 50%;
-  padding: 40px 30px 10px 30px;
-}
-
-.card2 {
-  width: 50%;
-  background-image: linear-gradient(to right, #ffd54f, #d500f9);
-}
-
-#logo {
-  width: 70px;
-  height: 60px;
-}
-
-.heading {
-  margin-bottom: 60px !important;
-}
-
-::placeholder {
-  color: #000 !important;
-  opacity: 1;
-}
-
-:-ms-input-placeholder {
-  color: #000 !important;
-}
-
-::-ms-input-placeholder {
-  color: #000 !important;
-}
-
-.form-control-label {
-  font-size: 12px;
-  margin-left: 15px;
-}
-
-.msg-info {
-  padding-left: 15px;
-  margin-bottom: 30px;
-}
-
-.btn-color {
-  border-radius: 50px;
+.register h2,
+h5 {
   color: #fff;
-  background-image: linear-gradient(to right, #ffd54f, #d500f9);
-  padding: 15px;
-  cursor: pointer;
-  border: none !important;
-  margin-top: 40px;
+  font-family: system-ui;
+  font-weight: 100;
 }
 
-.btn-color:hover {
+.register h2 {
+  letter-spacing: -2px;
+}
+
+.register form {
+  margin: 70px auto;
+  width: 32%;
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+  .register form {
+    margin: 70px auto;
+    width: 70%;
+  }
+}
+
+.register form h5 {
   color: #fff;
-  background-image: linear-gradient(to right, #d500f9, #ffd54f);
 }
 
-.btn-white {
-  border-radius: 50px;
-  color: #d500f9;
-  background-color: #fff;
-  padding: 8px 40px;
-  cursor: pointer;
-  border: 2px solid #d500f9 !important;
+.register form input {
+  background-color: #23272b;
+  border-color: #23272b;
+  height: 55px;
+  /* color: #9b9ea1; */
+  color: #42e24f;
+  text-align: center;
+  letter-spacing: 0ch;
 }
 
-.btn-white:hover {
-  color: #fff;
-  background-image: linear-gradient(to right, #ffd54f, #d500f9);
-}
-
-a {
-  color: #000;
-}
-
-a:hover {
-  color: #000;
-}
-
-.bottom {
-  width: 100%;
-  margin-top: 50px !important;
-}
-
-.sm-text {
+.register form input::placeholder {
+  text-align: center;
   font-size: 15px;
 }
 
-@media screen and (max-width: 992px) {
-  .card1 {
-    width: 100%;
-    padding: 40px 30px 10px 30px;
-  }
-
-  .card2 {
-    width: 100%;
-  }
-
-  .right {
-    margin-top: 100px !important;
-    margin-bottom: 100px !important;
-  }
+.register form .singin {
+  border: 1px solid #42e24f;
+  padding: 15px 45px;
+  background-color: #42e24f;
+  color: #ffff;
+  border-radius: 0.3ch;
 }
 
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 10px !important;
-  }
+.register form .triuble {
+  color: #9b9ea1;
+}
 
-  .card2 {
-    padding: 50px;
-  }
+.register form p {
+  color: #fff;
+}
 
-  .right {
-    margin-top: 50px !important;
-    margin-bottom: 50px !important;
-  }
+.register form .signup {
+  color: #42e24f;
 }

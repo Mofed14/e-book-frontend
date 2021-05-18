@@ -45,6 +45,8 @@ export class RegisterComponent implements OnInit {
       this.api.register(body).subscribe((res) => {
         if (res.error === 400) {
           this.message.warning('Invalid entry data or The User already exists');
+        } else if (res.error === 401) {
+          this.message.info('The email is not valid');
         } else if (res.success === true) {
           this.router.navigate(['/login']);
           this.message.success('Successfully sing up');

@@ -1,32 +1,27 @@
-<div class="container px-4 py-5 mx-auto" *ngIf="loginForm">
-  <div class="card card0">
-      <div class="d-flex flex-lg-row flex-column-reverse">
-          <div class="card card1">
-              <div class="row justify-content-center my-auto" [formGroup]="loginForm">
-                  <div class="col-md-8 col-10 my-5">
-                      <h3 class="mb-5 text-center heading">E-Library</h3>
-                      <h6 class="msg-info">Please login to your account</h6>
-                      <div class="form-group">
-                        <label class="form-control-label text-muted">ُEmail</label>
-                        <input type="text" formControlName="email" name="email" placeholder="email" class="form-control">
-                      </div>
-                      <div class="form-group">
-                        <label class="form-control-label text-muted">Password</label>
-                        <input type="password" formControlName="password" name="password" placeholder="Password" class="form-control">
-                       </div>
-                      <div class="row justify-content-center my-3 px-3">
-                        <button type="submit" (click)="login()" class="btn-block btn-color">Login</button> </div>
-                  </div>
-              </div>
-              <div class="bottom text-center mb-5">
-                  <p class="sm-text mx-auto mb-3">Don't have an account?<button routerLink="/register" class="btn btn-white ml-2">Create new</button></p>
-              </div>
+<div class="login">
+  <div class="container">
+    <h2 class="pt-4">Login</h2>
+    <div class="row">
+      <div class="col-12">
+        <form [formGroup]="loginForm">
+          <h5 class="text-center mb-70">Log in Your Account</h5>
+          <div class="form-group mb-2">
+            <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp" placeholder="email">
           </div>
-          <div class="card card2">
-              <div class="my-auto mx-md-5 px-md-5 right">
-                  <h3 class="text-white">We are more than just a group</h3> <small class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</small>
-              </div>
+          <div class="form-group">
+            <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1" placeholder="password">
           </div>
+          <div class="text-center mt-50">
+            <a type="submit" (click)="login()" class="singin">SIGN IN</a>
+            <p class="mt-2 triuble">Having Triuble?</p>
+          </div>
+          <div class="text-center mt-70">
+            <p class="mb-0">Don`t Have an Account?</p>
+            <a routerLink="/register" class="signup">Sign Up Here</a>
+          </div>
+        </form>
       </div>
+    </div>
   </div>
 </div>
+

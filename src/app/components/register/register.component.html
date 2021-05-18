@@ -1,40 +1,32 @@
-<div class="container px-4 py-5 mx-auto" *ngIf="registerForm">
-  <div class="card card0">
-      <div class="d-flex flex-lg-row flex-column-reverse">
-        <div class="card card2">
-          <div class="my-auto mx-md-5 px-md-5 right">
-              <h3 class="text-white">We are more than just a group</h3> <small class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</small>
+<div class="register">
+  <div class="container">
+    <h2 class="pt-4">Sign up</h2>
+    <div class="row">
+      <div class="col-12">
+        <form [formGroup]="registerForm">
+          <h5 class="text-center mb-70">Sign up Your Account</h5>
+          <div class="form-group mb-2">
+            <input type="email" class="form-control" formControlName="firstname" placeholder="First name">
           </div>
-      </div>
-          <div class="card card1">
-              <div class="row justify-content-center my-auto" [formGroup]="registerForm">
-                  <div class="col-md-8 col-10 my-5">
-                      <h3 class="mb-5 text-center heading">E-Library</h3>
-                      <h6 class="msg-info">Please Create your account</h6>
-                      <div class="form-group">
-                        <label class="form-control-label text-muted">Firstname</label>
-                        <input type="text" formControlName="firstname" name="firstname" class="form-control">
-                      </div>
-                      <div class="form-group">
-                        <label class="form-control-label text-muted">Lastname</label>
-                        <input type="text"  formControlName="lastname" name="lastname" class="form-control">
-                      </div>
-                      <div class="form-group">
-                        <label class="form-control-label text-muted">ُEmail</label>
-                        <input type="email" formControlName="email" name="email"  class="form-control">
-                      </div>
-                      <div class="form-group">
-                        <label class="form-control-label text-muted">Password</label>
-                        <input type="password" formControlName="password" name="password"  class="form-control">
-                       </div>
-                      <div class="row justify-content-center my-3 px-3">
-                        <button type="submit" (click)="signup()" class="btn-block btn-color">Sign Up</button> </div>
-                  </div>
-              </div>
-              <div class="bottom text-center mb-5">
-                  <p class="sm-text mx-auto mb-3">you have an account?<button routerLink="/login" class="btn btn-white ml-2">Login</button></p>
-              </div>
+          <div class="form-group mb-2">
+            <input type="email" class="form-control" formControlName="lastname" placeholder="Last name">
           </div>
+          <div class="form-group mb-2">
+            <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="text-center mt-50">
+            <a type="submit" (click)="signup()" class="singin">SIGN UP</a>
+            <p class="mt-2 triuble">Having Triuble?</p>
+          </div>
+          <div class="text-center mt-70">
+            <p class="mb-0">Do you Have an Account?</p>
+            <a routerLink="/login" class="signup">Sign in Here</a>
+          </div>
+        </form>
       </div>
+    </div>
   </div>
 </div>
