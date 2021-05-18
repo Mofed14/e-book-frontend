@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
     private api: ApiService,
     private fb: FormBuilder,
     private router: Router,
-    private toastr: ToastrService
+    private message: NzMessageService
   ) {
     this.formBuilder();
   }
@@ -44,16 +44,16 @@ export class RegisterComponent implements OnInit {
     if (body.firstname && body.lastname && body.email && body.password) {
       this.api.register(body).subscribe((res) => {
         if (res.error === 400) {
-          this.toastr.warning('Invalid entry data or The User already exists');
+          this.message.warning('Invalid entry data or The User already exists');
         } else if (res.success === true) {
           this.router.navigate(['/login']);
-          this.toastr.success('Done', 'Successfully sing up');
+          this.message.success('Successfully sing up');
         } else {
           console.log(res);
         }
       });
     } else {
-      this.toastr.error('Please enter the required data');
+      this.message.error('Please enter the required data');
     }
   }
 }

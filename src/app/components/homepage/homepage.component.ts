@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-import { ToastrService } from 'ngx-toastr';
+import { NzMessageService } from 'ng-zorro-antd/message';
 // import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { DataService } from '../../services/data.service';
 import { Subject } from 'rxjs';
@@ -16,7 +16,7 @@ export class HomepageComponent implements OnInit {
   book: any;
   constructor(
     private api: ApiService,
-    private toastr: ToastrService,
+    private message: NzMessageService,
     private modal: NzModalService,
     public dataservice: DataService,
     private router: Router
@@ -53,7 +53,7 @@ export class HomepageComponent implements OnInit {
         });
         console.log(this.books);
       } else {
-        this.toastr.warning('No books yet');
+        this.message.warning('No books yet');
       }
     });
   }
@@ -85,7 +85,7 @@ export class HomepageComponent implements OnInit {
     ////////// هتجيب الداتا القديمه وتضيف ليها الجديده عشان اي كتاب اضغط عليه اضيفه في الوكل استورج
     const oldobject = JSON.parse(localStorage.getItem(this.keybookdata)) || [];
     if (oldobject.length >= 5) {
-      this.toastr.warning('The cart is full');
+      this.message.warning('The cart is full');
     } else {
       oldobject.push(event);
       localStorage.setItem(this.keybookdata, JSON.stringify(oldobject));

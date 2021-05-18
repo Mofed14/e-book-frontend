@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
     private api: ApiService,
     private fb: FormBuilder,
     private router: Router,
-    private toastr: ToastrService
+    private message: NzMessageService
   ) {
     this.form();
   }
@@ -40,21 +40,21 @@ export class LoginComponent implements OnInit {
     if (body.email && body.password) {
       this.api.login(body).subscribe((res) => {
         if (res.error === 400) {
-          this.toastr.warning('Invalid entry data');
+          this.message.warning('Invalid entry data');
         } else if (res.error === 404) {
-          this.toastr.error('The User not found');
+          this.message.error('The User not found');
         } else if (res.error === 401) {
-          this.toastr.error('Incorrect password');
+          this.message.error('Incorrect password');
         } else if (res.success === true) {
           localStorage.setItem('userData', res.userdata.id);
           this.router.navigate(['/home']);
-          this.toastr.success('Successfully login');
+          this.message.success('Successfully login');
         } else {
           console.log(res);
         }
       });
     } else {
-      this.toastr.error('Please enter the required data');
+      this.message.error('Please enter the required data');
     }
   }
 }

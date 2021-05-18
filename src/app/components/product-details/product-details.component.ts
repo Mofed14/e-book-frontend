@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-import { ToastrService } from 'ngx-toastr';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
@@ -23,7 +23,7 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(
     private api: ApiService,
-    private toastr: ToastrService,
+    private message: NzMessageService,
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private modalService: NgbModal,
@@ -55,14 +55,14 @@ export class ProductDetailsComponent implements OnInit {
     };
     this.api.buyBook(body).subscribe((res) => {
       if (res.error === 422) {
-        this.toastr.show(
+        this.message.info(
           'You doesn`t have enough balance or You already have this book in your library'
         );
-        this.toastr.warning(
+        this.message.warning(
           'Pleace check if you have balance or you have this book'
         );
       } else if (res.success === true) {
-        this.toastr.success('user successfully purchased book');
+        this.message.success('user successfully purchased book');
         this.router.navigate(['/']);
       } else {
         console.log(res);
@@ -87,15 +87,15 @@ export class ProductDetailsComponent implements OnInit {
     if (body.amount) {
       this.api.userAddFunds(body).subscribe((res) => {
         if (res.error === 400) {
-          this.toastr.error('Please enter the funds');
+          this.message.error('Please enter the funds');
         } else if (res.success === true) {
-          this.toastr.success('Now you can buy any thing');
+          this.message.success('Now you can buy any thing');
         } else {
           console.log(res);
         }
       });
     } else {
-      this.toastr.error('Please enter the funds');
+      this.message.error('Please enter the funds');
     }
   }
   //////////// add funds ////////////
@@ -157,13 +157,13 @@ export class ProductDetailsComponent implements OnInit {
     this.api.userRate(body).subscribe((res) => {
       console.log(res);
       if (res.error === 400) {
-        this.toastr.info('Bad request info');
+        this.message.info('Bad request info');
       } else if (res.error === 422) {
-        this.toastr.warning(
+        this.message.warning(
           'You may already rated this book or You doesn`t have this book in your library'
         );
       } else if (res.success === true) {
-        this.toastr.success('You successfully rated book');
+        this.message.success('You successfully rated book');
         this.getrates(); // to get rates automatic and show reviews when add rate
       } else {
         console.log(res);
@@ -177,7 +177,7 @@ export class ProductDetailsComponent implements OnInit {
   getrates() {
     this.api.getBookRatingByBookid(this.bookid).subscribe((res) => {
       if (res.error === 500) {
-        this.toastr.info('This book doesn`t have any rate');
+        this.message.info('This book doesn`t have any rate');
       } else if (res.success === true) {
         this.rates = res.books.length;
       } else {

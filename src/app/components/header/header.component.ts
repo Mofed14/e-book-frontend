@@ -1,7 +1,7 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { ApiService } from '../../services/api.service';
 import { DataService } from '../../services/data.service';
 @Component({
@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private toastr: ToastrService,
+    private message: NzMessageService,
     private api: ApiService,
     public data: DataService
   ) {}
@@ -45,7 +45,7 @@ export class HeaderComponent implements OnInit {
     if (localStorage.getItem('userData')) {
       localStorage.removeItem('userData');
       this.router.navigate(['/']);
-      this.toastr.success('Successfully logout');
+      this.message.success('Successfully logout');
     }
   }
 

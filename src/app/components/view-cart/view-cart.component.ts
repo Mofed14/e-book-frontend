@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +10,7 @@ export class ViewCartComponent implements OnInit {
   storagebooks: [];
   books: any;
 
-  constructor(private toastr: ToastrService, private router: Router) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.getbooksfromlocalstorage();

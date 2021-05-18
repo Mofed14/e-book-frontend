@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-import { ToastrService } from 'ngx-toastr';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-book',
@@ -11,7 +11,7 @@ export class BookComponent implements OnInit {
   userid = localStorage.getItem('userData');
   books: any;
   error: any;
-  constructor(private api: ApiService, private toastr: ToastrService) {}
+  constructor(private api: ApiService, private message: NzMessageService) {}
 
   ngOnInit(): void {
     this.getuserbooks();
@@ -22,7 +22,7 @@ export class BookComponent implements OnInit {
     this.api.getUserBooksByUserId(this.userid).subscribe((res) => {
       if (res.error === 404) {
         this.error = res.error;
-        this.toastr.info('You don`t have any books ');
+        this.message.info('You don`t have any books ');
       } else if (res.success === true) {
         this.books = res.books;
       } else {
