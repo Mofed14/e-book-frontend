@@ -4,7 +4,15 @@ section h1{
 }
 
 .row{
-    margin:30px 0 0px 0;
+    margin:30px 0px 60px 0;
+}
+
+.prof{
+    padding-top: 120px;
+}
+
+.prof h1{
+    padding-bottom: 100px;
 }
 
 .prof img{
@@ -19,6 +27,10 @@ section h1{
 
 p{
     color:#222f3e;
+}
+
+.follow{
+    padding-bottom: 120px;
 }
 
 .follow h1 span{
@@ -45,8 +57,44 @@ svg{
 
 .last-section{
     background-color: #151823;
-    padding: 50px 50px;
+    padding: 10px;
     
+}
+
+.last-section h2,
+ h5{
+    color:white
+}
+
+.last-section p,i{
+    color:#00b894;
+}
+.last-section a{
+    color:white
+}
+
+.last-section a:hover{
+    color:#ff7979
+}
+
+.last-section i{
+    margin-right: 10px;
+}
+
+.last-section .fa-twitter{
+    color:#48dbfb;
+}
+.last-section .fa-facebook-square{
+color:#3742fa;
+    
+}
+
+.last-section .fa-linkedin{
+    color:#0A66C2
+}
+
+.last-section .fa-whatsapp{
+    color:#32ff7e
 }
 
 

@@ -438,7 +438,7 @@ input:focus {
   font-weight: 800px;
 
   border-bottom: 0px solid #000000;
-  background-color: #55efc4;
+  background-color: #00b894;
   opacity: 1;
   border-radius: 5%;
 }
@@ -459,7 +459,7 @@ input:focus {
   color: #ffffff;
   border-radius: 10%;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 12px;
   font-family: Catamaran;
   font-weight: 500;
   background-color: #ff7979;
@@ -469,7 +469,7 @@ input:focus {
 }
 
 .nav-link:hover {
-  background-color: #ff3838;
+
   color: #ffffff;
   font-family: Catamaran;
 }

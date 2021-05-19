@@ -56,7 +56,7 @@
 }
 
 .section-title-5 h4:before {
-  background: #f07c29 none repeat scroll 0 0;
+  background: #02475e none repeat scroll 0 0;
   bottom: 0;
   content: "";
   height: 2px;
@@ -236,7 +236,7 @@
 
 .tab-3 ul li a.active,
 .tab-3 ul li a:hover {
-  color: #f07c29;
+  color: #02475e;
 }
 
 .list-page {
@@ -530,7 +530,7 @@
 
 .slider-active.owl-carousel .owl-nav .owl-prev:hover,
 .slider-active.owl-carousel .owl-nav .owl-next:hover {
-  color: #f07c29;
+  color: #02475e;
 }
 
 .slider-active.owl-carousel .owl-dots .owl-dot span {
@@ -545,7 +545,7 @@
 }
 
 .slider-active.owl-carousel .owl-dots .owl-dot.active span {
-  background: #f07c29 none repeat scroll 0 0;
+  background: #02475e none repeat scroll 0 0;
   width: 32px;
 }
 
@@ -664,7 +664,7 @@
 }
 
 .tab-menu ul li a:before {
-  background: #f07c29 none repeat scroll 0 0;
+  background: #4aa96c none repeat scroll 0 0;
   bottom: -10px;
   content: "";
   height: 2px;
@@ -741,7 +741,7 @@ img {
 }
 
 .quick-view a {
-  background-color: #f07c29;
+  background-color: #02475e;
   border-radius: 50px;
   color: #fff;
   display: inline-block;
@@ -762,7 +762,7 @@ img {
 }
 
 .product-rating ul li a {
-  color: #f07c29;
+  color: #02475e;
   font-size: 12px;
 }
 
@@ -772,7 +772,7 @@ img {
 }
 
 .product-details h4 a {
-  color: #333333;
+  color: #02475e;
   display: block;
   font-size: 16px;
   font-weight: 700;
@@ -787,12 +787,12 @@ img {
 .product-details h4 a:hover,
 .product-link .product-button a:hover,
 .product-link .add-to-link ul li a:hover {
-  color: #f07c29;
+  color: #02475e;
 }
 
 .product-price ul li {
   display: inline-block;
-  color: #f07c29;
+  color: #5b8a72;
   font-size: 20px;
   font-weight: 600;
   font-family: "Rufina", serif;
@@ -932,7 +932,7 @@ img {
 }
 
 .product-flag ul li > span {
-  background: #f07c29 none repeat scroll 0 0;
+  background: #02475e none repeat scroll 0 0;
   color: #fff;
   font-size: 12px;
   font-weight: 400;
@@ -946,12 +946,12 @@ img {
 }
 
 .product-flag ul li > span.discount-percentage {
-  background: #eeb900 none repeat scroll 0 0;
+  background: #5b8a72 none repeat scroll 0 0;
   line-height: 1;
 }
 
 .product-flag ul li > span:before {
-  border-color: #f07c29 transparent transparent #f07c29;
+  border-color: #02475e transparent transparent #02475e;
   border-style: solid;
   border-width: 4.5px 3px;
   content: "";
@@ -961,21 +961,21 @@ img {
 }
 
 .product-flag ul li > span:after {
-  border-color: transparent transparent #f07c29 #f07c29;
+  border-color: transparent transparent #02475e #02475e;
   border-style: solid;
   border-width: 4.5px 3px;
   bottom: 0;
   content: "";
   position: absolute;
   right: -6px;
-}
+} 
 
 .product-flag ul li > span.discount-percentage:before {
-  border-color: #eeb900 transparent transparent #eeb900;
+  border-color: #5b8a72 transparent transparent #5b8a72;
 }
 
 .product-flag ul li > span.discount-percentage:after {
-  border-color: transparent transparent #eeb900 #eeb900;
+  border-color: transparent transparent #5b8a72 #5b8a72;
 }
 
 .tab-content > .tab-pane {
