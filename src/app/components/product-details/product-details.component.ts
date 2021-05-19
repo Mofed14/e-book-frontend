@@ -153,7 +153,6 @@ export class ProductDetailsComponent implements OnInit {
       book_id: this.rateform.value.book_id,
       rate: this.rateform.value.rate,
     };
-    console.log(body);
     this.api.userRate(body).subscribe((res) => {
       console.log(res);
       if (res.error === 400) {

@@ -227,15 +227,15 @@ img {
   float: right;
 }
 
- .header-mid-area .my-cart ul > li .mini-cart-sub .cart-totals h5 span {
+.header-mid-area .my-cart ul > li .mini-cart-sub .cart-totals h5 span {
   background: none;
 }
 
- .header-mid-area .my-cart ul > li .mini-cart-sub .cart-totals h5 span {
+.header-mid-area .my-cart ul > li .mini-cart-sub .cart-totals h5 span {
   background: none;
 }
 
- .header-mid-area .my-cart ul > li .mini-cart-sub .cart-totals h5 span {
+.header-mid-area .my-cart ul > li .mini-cart-sub .cart-totals h5 span {
   background: none;
 }
 
@@ -259,17 +259,17 @@ img {
   font-family: Rufina;
 }
 
- .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a,
- .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a,
- .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a,
- .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a {
+.header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a,
+.header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a,
+.header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a,
+.header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a {
   color: #fff;
 }
 
- .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover,
- .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover,
- .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover,
- .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover {
+.header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover,
+.header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover,
+.header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover,
+.header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover {
   color: #f07c29;
 }
 
@@ -306,14 +306,16 @@ img {
     z-index: 999;
   }
 
-  .navbar ul li{
+  /* nav.navbar.navbar-expand-lg {
+
+  } */
+
+  .navbar ul li {
     padding-left: 40px;
   }
-  .navbar button{
+  .navbar button {
     margin-right: -10px;
   }
-
-
 }
 
 @media (min-width: 992px) {
@@ -329,23 +331,18 @@ img {
     flex: 0 0 50%;
     max-width: 50%;
   }
-
-  
 }
 
-@media(max-width:992px){
-  .navbar ul li{
+@media (max-width: 992px) {
+  .navbar ul li {
     padding-left: 35px;
-
   }
-    .navbar ul li>a:hover {
-      color: black;
-      font-weight: 800px; 
-      
-        
-    }
-  
-  .navbar button{
+  .navbar ul li > a:hover {
+    color: black;
+    font-weight: 800px;
+  }
+
+  .navbar button {
     margin-right: 0px;
   }
 }
@@ -390,33 +387,29 @@ input:focus {
 
 /********************************************************************/
 
-.navbar{
-    background-color: #151823;
-
-    
+.navbar {
+  background-color: #151823;
+  position: fixed !important;
+  width: 100%;
+  z-index: 200;
 }
 
-
-
-.logo img{
-    width:90px;
-    margin-right: 25px;
-    height:50px;
-    border-radius: 5%;
-    background-color: white;
-
+.logo img {
+  width: 90px;
+  margin-right: 25px;
+  height: 50px;
+  border-radius: 5%;
+  background-color: white;
 }
 
-.logo img:hover{
-    transform:scale(1.1);
+.logo img:hover {
+  transform: scale(1.1);
 }
-
 
 .navbar-toggler {
   background-color: #20bf6b;
-  
 }
-.fa-sort-desc{
+.fa-sort-desc {
   padding-bottom: 5px;
 }
 
@@ -427,8 +420,8 @@ input:focus {
 }
 
 .navbar ul li > a {
-    background: transparent none repeat scroll 0 0;
-  color:#ffffff;
+  background: transparent none repeat scroll 0 0;
+  color: #ffffff;
   display: block;
   font-size: 18px;
   font-family: Catamaran;
@@ -440,32 +433,30 @@ input:focus {
   z-index: 4;
 }
 
-
-
-.navbar ul li>a:hover {
+.navbar ul li > a:hover {
   color: black;
   font-weight: 800px;
-  
+
   border-bottom: 0px solid #000000;
-  background-color:         #55efc4    ;
+  background-color: #55efc4;
   opacity: 1;
   border-radius: 5%;
 }
 .navbar ul li > a:focus {
-  color:black;
+  color: black;
   font-weight: 500px;
-  background-color:    #00b894     ;
+  background-color: #00b894;
   opacity: 1;
   border-radius: 5%;
 }
 
-.nav-link{
-  margin:auto;
+.nav-link {
+  margin: auto;
   margin: auto;
   margin-right: 25px;
   display: block;
   padding: 0.5rem 1rem;
-  color:#ffffff;
+  color: #ffffff;
   border-radius: 10%;
   cursor: pointer;
   font-size: 18px;
@@ -473,15 +464,12 @@ input:focus {
   font-weight: 500;
   background-color: #ff7979;
   text-decoration: none;
-  transition: color 0.15s ease-in-out,
-   background-color 0.15s ease-in-out,
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out;
 }
 
-.nav-link:hover{
+.nav-link:hover {
   background-color: #ff3838;
-  color:#ffffff;
+  color: #ffffff;
   font-family: Catamaran;
-  
-
 }

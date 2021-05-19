@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @Component({
   selector: 'app-book',
@@ -11,10 +12,15 @@ export class BookComponent implements OnInit {
   userid = localStorage.getItem('userData');
   books: any;
   error: any;
-  constructor(private api: ApiService, private message: NzMessageService) {}
+  constructor(
+    private api: ApiService,
+    private message: NzMessageService,
+    private notification: NzNotificationService
+  ) {}
 
   ngOnInit(): void {
     this.getuserbooks();
+    this.notifications();
   }
 
   // tslint:disable-next-line:typedef
@@ -29,5 +35,12 @@ export class BookComponent implements OnInit {
         console.log(res);
       }
     });
+  }
+
+  notifications() {
+    this.notification.blank(
+      'Rate Now',
+      'Please give your review about these books'
+    );
   }
 }
