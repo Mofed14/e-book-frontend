@@ -4,17 +4,48 @@ section h1{
 }
 
 .row{
-    margin:30px 0 30px 0;
+    margin:30px 0 0px 0;
 }
 
-img{
+.prof img{
     width:380px;
     height:400px
+}
+.prof h1 span{
+    color:#009432;
+    line-height: 39px;
+    font-style: italic;
+}
+
+p{
+    color:#222f3e;
+}
+
+.follow h1 span{
+    color:#b33939
+}
+
+.three-icons{
+    margin-top:160px;
+}
+
+
+
+
+svg{
+    margin-bottom: 30px;
+    
 }
 
 .img2{
     margin:0 40px 30px 0px;
     padding-left: 0px;
+    
+}
+
+.last-section{
+    background-color: #151823;
+    padding: 50px 50px;
     
 }
 

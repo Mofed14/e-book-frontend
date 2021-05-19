@@ -227,15 +227,15 @@ img {
   float: right;
 }
 
-.home-3 .header-mid-area .my-cart ul > li .mini-cart-sub .cart-totals h5 span {
+ .header-mid-area .my-cart ul > li .mini-cart-sub .cart-totals h5 span {
   background: none;
 }
 
-.home-4 .header-mid-area .my-cart ul > li .mini-cart-sub .cart-totals h5 span {
+ .header-mid-area .my-cart ul > li .mini-cart-sub .cart-totals h5 span {
   background: none;
 }
 
-.home-6 .header-mid-area .my-cart ul > li .mini-cart-sub .cart-totals h5 span {
+ .header-mid-area .my-cart ul > li .mini-cart-sub .cart-totals h5 span {
   background: none;
 }
 
@@ -259,17 +259,17 @@ img {
   font-family: Rufina;
 }
 
-.home-3 .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a,
-.home-4 .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a,
-.home-5 .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a,
-.home-6 .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a {
+ .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a,
+ .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a,
+ .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a,
+ .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a {
   color: #fff;
 }
 
-.home-3 .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover,
-.home-4 .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover,
-.home-5 .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover,
-.home-6 .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover {
+ .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover,
+ .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover,
+ .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover,
+ .header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover {
   color: #f07c29;
 }
 
@@ -305,6 +305,15 @@ img {
     width: 100%;
     z-index: 999;
   }
+
+  .navbar ul li{
+    padding-left: 40px;
+  }
+  .navbar button{
+    margin-right: -10px;
+  }
+
+
 }
 
 @media (min-width: 992px) {
@@ -314,11 +323,30 @@ img {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 960px) {
   .col-lg-6 {
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     max-width: 50%;
+  }
+
+  
+}
+
+@media(max-width:992px){
+  .navbar ul li{
+    padding-left: 35px;
+
+  }
+    .navbar ul li>a:hover {
+      color: black;
+      font-weight: 800px; 
+      
+        
+    }
+  
+  .navbar button{
+    margin-right: 0px;
   }
 }
 
@@ -362,9 +390,34 @@ input:focus {
 
 /********************************************************************/
 
+.navbar{
+    background-color: #151823;
+
+    
+}
+
+
+
+.logo img{
+    width:90px;
+    margin-right: 25px;
+    height:50px;
+    border-radius: 5%;
+    background-color: white;
+
+}
+
+.logo img:hover{
+    transform:scale(1.1);
+}
+
+
 .navbar-toggler {
-  background-color: #a74600;
-  color: #e5e5e5;
+  background-color: #20bf6b;
+  
+}
+.fa-sort-desc{
+  padding-bottom: 5px;
 }
 
 .navbar ul li {
@@ -374,25 +427,61 @@ input:focus {
 }
 
 .navbar ul li > a {
-  background: transparent none repeat scroll 0 0;
-  color: #fff;
+    background: transparent none repeat scroll 0 0;
+  color:#ffffff;
   display: block;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 25px;
+  font-size: 18px;
+  font-family: Catamaran;
+  font-weight: 500;
+  line-height: 29px;
   padding: 13px 20px;
   position: relative;
   text-transform: uppercase;
   z-index: 4;
 }
 
-.navbar ul li:hover {
-  background-color: orange;
+
+
+.navbar ul li>a:hover {
+  color: black;
+  font-weight: 800px;
+  
+  border-bottom: 0px solid #000000;
+  background-color:         #55efc4    ;
   opacity: 1;
   border-radius: 5%;
 }
 .navbar ul li > a:focus {
-  background-color: #f07c29;
+  color:black;
+  font-weight: 500px;
+  background-color:    #00b894     ;
   opacity: 1;
   border-radius: 5%;
+}
+
+.nav-link{
+  margin:auto;
+  margin: auto;
+  margin-right: 25px;
+  display: block;
+  padding: 0.5rem 1rem;
+  color:#ffffff;
+  border-radius: 10%;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: Catamaran;
+  font-weight: 500;
+  background-color: #ff7979;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out,
+   background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+}
+
+.nav-link:hover{
+  background-color: #ff3838;
+  color:#ffffff;
+  font-family: Catamaran;
+  
+
 }

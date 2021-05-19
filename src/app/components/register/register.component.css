@@ -1,5 +1,5 @@
 .register {
-  height: 150%;
+  
   background-color: #2e3439;
   color: #c2c8ce !important;
 }
@@ -30,6 +30,8 @@ h5 {
 .register form h5 {
   color: #fff;
 }
+
+
 
 .register form input {
   background-color: #23272b;

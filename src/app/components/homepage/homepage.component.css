@@ -40,6 +40,8 @@
   display: none;
 }                                */
 
+
+
 .section-title-5 h4 {
   color: #3f3f3f;
   display: inline-block;
@@ -1088,4 +1090,19 @@ img {
 
 button {
   margin-right: 8px;
+}
+
+
+
+
+.s131[_ngcontent-uhl-c173] {
+  min-height: 100vh;    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: poppins, sans-serif;
+  background: url(https://idsb.tmgrup.com.tr/ly/uploads/images/2021/04/02/104938.jpg);
+  background-size: cover;
+  background-position: center center;
+  padding: 15px;
 }
