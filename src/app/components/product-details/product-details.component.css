@@ -43,7 +43,7 @@
 }
 
 .tab-menu ul li a:before {
-  background: #f07c29 none repeat scroll 0 0;
+  background: #02475e none repeat scroll 0 0;
   bottom: -10px;
   content: "";
   height: 2px;
@@ -116,7 +116,7 @@
 }
 
 .quick-view a {
-  background-color: #f07c29;
+  background-color: #02475e;
   border-radius: 50px;
   color: #fff;
   display: inline-block;
@@ -1526,12 +1526,12 @@
 }
 
 .flex-control-thumbs .flex-active {
-  border: 2px solid #ff5a09;
+  border: 2px solid #02475e;
 }
 
 .product-info-area .nav > li > a {
-  background: #f07c29 none repeat scroll 0 0;
-  border: 1px solid #f07c29;
+  background: #02475e none repeat scroll 0 0;
+  border: 1px solid #02475e;
   border-bottom: 0;
   border-radius: 0;
   display: block;
@@ -1544,7 +1544,7 @@
 }
 
 .product-info-area .nav > li > a.active {
-  background-color: #f07c29;
+  background-color: #02475e;
   color: #fff;
 }
 
@@ -1733,7 +1733,7 @@
 }
 
 .review-field-ratings .single-control .review-control-vote a:hover {
-  color: #f07c29;
+  color: #02475e;
 }
 
 .review-form {
@@ -1845,7 +1845,7 @@
 }
 
 .rating-summary > a {
-  color: #f07c29;
+  color: #02475e;
 }
 
 .reviews-actions a.view {
@@ -1869,7 +1869,7 @@
 }
 
 .product-info-price .price-final {
-  color: #f07c29;
+  color: #02475e;
   font-size: 25px;
   font-weight: 400;
   font-family: "Rufina", serif;
@@ -1943,7 +1943,7 @@
 
 .product-addto-links a:hover,
 .product-add-form form a:hover {
-  background: #f07c29 none repeat scroll 0 0;
+  background: #02475e none repeat scroll 0 0;
 }
 
 .product-addto-links-text p {
@@ -1980,7 +1980,7 @@
 }
 
 .blog-comment-readmore .blog-readmore a:hover {
-  color: #f07c29;
+  color: #02475e;
 }
 
 .blog-comment-readmore .blog-readmore a i {
