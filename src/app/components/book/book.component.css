@@ -8,7 +8,7 @@
 
 .breadcrumbs-area {
   border-bottom: 1px solid #e5e5e5;
-  padding: 12px 0;
+  padding: 71px 0 4px;
 }
 
 .breadcrumbs-menu ul li {
@@ -268,7 +268,6 @@
 .field-limiter {
   display: inline-block;
 }
-
 
 .control select {
   border: 1px solid #ccc;
@@ -697,7 +696,7 @@ img {
   text-align: center;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 999;
+  z-index: 150;
   transition: all 0.5s ease 0s;
   opacity: 0;
 }
@@ -1045,4 +1044,19 @@ img {
 
 .bt {
   border-top: 1px solid #e5e5e5;
+}
+
+.price {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.price .p {
+  color: #ff9f1a;
+}
+
+.price span {
+  text-transform: none;
+}
+.paragraph span {
+  color: #ff9f1a;
 }

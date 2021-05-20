@@ -97,8 +97,8 @@
                                             <img src="../../../{{book.image}}" alt="book" class="primary">
                                         </a>
                                         <div class="quick-view">
-                                            <a class="action-view" routerLink="../product-details/{{book.book_id}}" title="Quick View">
-                                                <i  class="fa fa-search-plus"></i>
+                                            <a class="action-view"  (click)="open(ccontent);getbookbybookid(book.book_id);getrates(book.book_id)" title="Quick View">
+                                                <i class="fa fa-search-plus"></i>
                                             </a>
                                         </div>
                                         <div class="product-flag">
@@ -156,10 +156,64 @@
                     </div> -->
                 </div>
                 <!-- pagination-area-end -->
+
             </div>
         </div>
     </div>
 </div>
 
 
+
+<ng-template #ccontent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Book Details</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+   <div class="container" *ngIf="bookdata">
+     <div class="row">
+        <div class="col-4 text-center">
+          <img src="../../../{{bookdata.image}}" alt="woman" draggable="false">
+        </div>
+        <div class="col-8">
+          <h4>{{bookdata.title}}</h4>
+          <div class="rating-summary" >
+            <span *ngIf="!userId">Add your review </span>
+            <span *ngIf="userId">you reviwed</span>
+            <ngb-rating [max]="5" (click)="addrate()" [(ngModel)]="currentRate"> </ngb-rating>
+          </div>
+          <div>
+            <span><a>{{rates}} Reviews </a></span>
+          </div>
+          <div class="paragraph pt-4">
+            <p>
+              One of the books I love most is <span>{{bookdata.title}}</span>. It's a novel that I had as a prize in my school, and It's author is <span> {{bookdata.auther_name}}</span>.  This novel took me a good amount of time to finish because this book is very thick. It is part of a series.
+            </p>
+          </div>
+          <div class="price">
+            <h5>
+              Current price:
+              <span class="p">${{bookdata.price}}</span>
+            </h5>
+            <span>{{bookdata.pages}} pages</span>
+            <p>
+
+              <span>The Author: {{bookdata.auther_name}}</span>
+            </p>
+          </div>
+        </div>
+     </div>
+
+
+
+
+
+  </div>
+  </div>
+  <!-- <div class="modal-footer">
+    <button type="button" [disabled]="!addfundsform.valid" class="btn btn-outline-dark"  (click)="modal.close('Save click')" (click)="addfunds()">Save</button>
+  </div> -->
+</ng-template>
 

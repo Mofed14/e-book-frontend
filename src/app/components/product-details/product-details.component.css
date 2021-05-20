@@ -1081,7 +1081,11 @@
 
 .breadcrumbs-area {
   border-bottom: 1px solid #e5e5e5;
-  padding: 12px 0;
+  padding: 71px 0 4px;
+}
+
+.breadcrumbs-area a:hover {
+  color: #02475e !important;
 }
 
 .breadcrumbs-menu ul li {
@@ -2499,4 +2503,11 @@
 .single-post-button a:hover {
   background: #f07c29 none repeat scroll 0 0;
   border: 1px solid #f07c29;
+}
+
+.fund {
+  color: #333;
+}
+.fund:hover {
+  color: #02475e;
 }

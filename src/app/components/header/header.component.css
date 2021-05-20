@@ -468,8 +468,11 @@ input:focus {
     border-color 0.15s ease-in-out;
 }
 
-.nav-link:hover {
+.cart {
+  margin: auto;
+}
 
+.nav-link:hover {
   color: #ffffff;
   font-family: Catamaran;
 }

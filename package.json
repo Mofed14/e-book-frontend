@@ -27,6 +27,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^1.12.0",
     "jquery-parallax.js": "^1.5.0",
+    "mdbootstrap": "^4.19.2",
     "modernizr": "^3.11.7",
     "ng-zorro-antd": "^11.4.1",
     "ng2-search-filter": "^0.5.1",
