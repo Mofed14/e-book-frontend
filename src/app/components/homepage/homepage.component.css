@@ -38,7 +38,16 @@
 
 .breadcrumbs-menu ul li:last-child:before {
   display: none;
-}                                */
+}             */
+
+
+
+
+
+
+
+
+
 
 
 
@@ -64,6 +73,9 @@
   position: absolute;
   width: 100%;
 }
+
+
+
 
 .left-title h4 {
   color: #3f3f3f;
@@ -98,9 +110,7 @@
   font-weight: 400;
 }
 
-.left-menu ul li a:hover {
-  color: #f07c29;
-}
+
 
 .left-menu ul li a:before {
   content: "->";
@@ -147,13 +157,6 @@
   display: none;
 }
 
-.color-menu ul.color li a.bg-2 {
-  background-color: #d99a09;
-}
-
-.color-menu ul.color li a.bg-3 {
-  background-color: #eb1a1a;
-}
 
 .color-menu ul.color li a.bg-4 {
   background-color: #fff;
@@ -236,7 +239,7 @@
 
 .tab-3 ul li a.active,
 .tab-3 ul li a:hover {
-  color: #02475e;
+  color: #186781;
 }
 
 .list-page {
@@ -698,13 +701,13 @@
 .product-img::after,
 .most-product-img::after,
 .banner-img-3::after {
-  background: rgba(255, 255, 255, 0.61) none repeat scroll 0 0;
+  background: #494981 none repeat scroll 0 0;
   content: "";
   display: block;
   height: 0;
   position: absolute;
   top: 0;
-  transition: all 0.5s ease-in-out 0s;
+  transition: all .5s ease-in-out 0s;
   width: 100%;
   pointer-events: none;
 }
@@ -713,7 +716,7 @@
 .single-most-product:hover .most-product-img::after,
 .single-deal:hover .banner-img-3::after {
   height: 100%;
-  opacity: 1;
+  opacity: .1;
 }
 
 .product-img a img {
@@ -731,13 +734,13 @@ img {
   text-align: center;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 999;
+  z-index: 150;
   transition: all 0.5s ease 0s;
   opacity: 0;
 }
 
 .product-wrapper:hover .quick-view {
-  opacity: 1;
+  opacity: .6;
 }
 
 .quick-view a {
@@ -839,7 +842,7 @@ img {
 }
 
 .product-link:after {
-  background: #cccccc none repeat scroll 0 0;
+  background: black none repeat scroll 0 0;
   bottom: 0;
   content: "";
   height: 1px;
@@ -968,7 +971,7 @@ img {
   content: "";
   position: absolute;
   right: -6px;
-} 
+}
 
 .product-flag ul li > span.discount-percentage:before {
   border-color: #5b8a72 transparent transparent #5b8a72;
@@ -1084,19 +1087,21 @@ img {
 .more,
 .less {
   cursor: pointer;
-  color: #e74208;
+  color: #333;
   font-weight: bold;
+}
+
+.more:hover,
+.less:hover {
+  color: #02475e;
 }
 
 button {
   margin-right: 8px;
 }
 
-
-
-
 .s131[_ngcontent-uhl-c173] {
-  min-height: 100vh;    
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -20,6 +20,7 @@ export class ProductDetailsComponent implements OnInit {
   rateform: any;
   rates: any;
   localstorage: void;
+  err: any;
 
   constructor(
     private api: ApiService,
@@ -161,6 +162,7 @@ export class ProductDetailsComponent implements OnInit {
         this.message.warning(
           'You may already rated this book or You doesn`t have this book in your library'
         );
+        this.err = res.error;
       } else if (res.success === true) {
         this.message.success('You successfully rated book');
         this.getrates(); // to get rates automatic and show reviews when add rate
@@ -172,7 +174,6 @@ export class ProductDetailsComponent implements OnInit {
   //////////// addrate ///////////
 
   //////////// geterates ///////////
-
   getrates() {
     this.api.getBookRatingByBookid(this.bookid).subscribe((res) => {
       if (res.error === 500) {
@@ -184,4 +185,5 @@ export class ProductDetailsComponent implements OnInit {
       }
     });
   }
+  //////////// geterates ///////////
 }

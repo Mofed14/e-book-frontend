@@ -80,7 +80,7 @@
                                     <div class="price-final">
                                         <span>${{bookdata.price}}</span>
                                       </div>
-                                      <a (click)="open(mofed)" class="btn btn-primary">Add funds</a>
+                                      <a (click)="open(ccontent)" class="fund">Add funds <i  class="fa fa-money"></i></a>
 
                                     </div>
                                     <div class="product-add-form">
@@ -1139,9 +1139,9 @@
 
 
 
-<ng-template #mofed let-modal>
+<ng-template #ccontent let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <h4 class="modal-title" id="modal-basic-title">Add money</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>

@@ -23,20 +23,6 @@
   padding-right: 47px;
 }
 
-.header-search form a {
-  background: #f07c29 none repeat scroll 0 0;
-  color: #fff;
-  display: inline-block;
-  font-size: 18px;
-  height: 42px;
-  line-height: 40px;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  top: 0;
-  width: 42px;
-  border-radius: 0 5px 5px 0px;
-}
 
 .header-search form a:hover {
   background: #232323 none repeat scroll 0 0;
@@ -65,9 +51,7 @@ img {
   padding-right: 8px;
 }
 
-.header-mid-area .mini-cart ul li a:hover {
-  color: #f07c29;
-}
+
 
 .header-mid-area .my-cart {
   display: inline-block;
@@ -89,29 +73,13 @@ img {
   text-decoration: none;
   transition: 0.3s;
 }
-.header-mid-area .my-cart ul > li:hover a {
-  color: #f07c29;
-}
+
 
 .header-mid-area .my-cart ul li > a > i {
   font-size: 40px;
   padding-right: 30px;
 }
 
-.header-mid-area .my-cart ul li > span {
-  background: #f07c29 none repeat scroll 0 0;
-  border-radius: 50%;
-  bottom: 0;
-  color: #fff;
-  display: inline-block;
-  font-size: 18px;
-  height: 30px;
-  left: 24px;
-  line-height: 30px;
-  position: absolute;
-  text-align: center;
-  width: 30px;
-}
 
 .mini-cart-sub {
   position: absolute;
@@ -169,9 +137,6 @@ img {
   transition: 0.3s;
 }
 
-.cart-icon a:hover i {
-  color: #f07c29;
-}
 
 .cart-product .single-cart .cart-info h5 {
   margin-bottom: 0px;
@@ -188,18 +153,7 @@ img {
   text-transform: capitalize;
 }
 
-.header-mid-area
-  .my-cart
-  ul
-  > li
-  .cart-product
-  .single-cart
-  .cart-info
-  h5
-  a:hover,
-.header-mid-area .my-cart ul > li .cart-bottom a:hover {
-  color: #f07c29;
-}
+
 
 .cart-product .single-cart .cart-info p {
   margin-bottom: 0;
@@ -266,12 +220,6 @@ img {
   color: #fff;
 }
 
-.header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover,
-.header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover,
-.header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover,
-.header-mid-area .my-cart ul > li .mini-cart-sub .cart-bottom a:hover {
-  color: #f07c29;
-}
 
 /*----------------------------------------*/
 /*  2.3 Main menu area
@@ -318,11 +266,20 @@ img {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width:520px) and (max-width: 992px) {
   .col-lg-3 {
     flex: 0 0 25%;
     max-width: 25%;
   }
+
+  .navbar ul li {
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+    padding-top: 20px;
+    padding-left: 47px;
+  }
+
 }
 
 @media (min-width: 960px) {
@@ -371,6 +328,14 @@ img {
   }
 }
 
+@media(max-width:992px){
+  nav ul{
+    padding-right: 40px;
+    display: contents;
+  }
+}
+
+
 @media (max-width: 767px) {
   .header-mid-area .my-cart {
     display: flex;
@@ -379,6 +344,14 @@ img {
     margin-top: 0;
   }
 }
+@media (min-width:500px) and (max-width:576px)  {
+  nav ul>li{
+    display:contents;
+    padding-right: 40px;
+  }
+}
+
+
 
 textarea:focus,
 input:focus {
@@ -394,8 +367,7 @@ input:focus {
   z-index: 200;
 }
  nav ul {
-  float:right;
-  margin-right: 30px;
+  padding-left: 350px;
 }
 
 .logo img {
@@ -411,16 +383,19 @@ input:focus {
 }
 
 .navbar-toggler {
-  background-color: #20bf6b;
+  background-color:#2C3A47;
 }
 .fa-sort-desc {
   padding-bottom: 5px;
+  color:#CAD3C8;
+ 
 }
 
 .navbar ul li {
   display: inline-block;
   margin-right: 10px;
   position: relative;
+  
 }
 
 .navbar ul li > a {
@@ -434,8 +409,58 @@ input:focus {
   padding: 13px 20px;
   position: relative;
   text-transform: uppercase;
+  transition: .5s;
   z-index: 4;
 }
+
+
+
+.navbar ul li a::after{
+  content: '';
+  position: absolute;
+  width:100%;
+  transform: scaleX(0);
+  height:2px;
+  bottom: -2px;
+  left:0px;
+  transform-origin: bottom right;
+  background-color:#23dbdb ;
+  transition: .25s ease-out;
+  color:#23dbdb
+}
+
+.navbar ul li a:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  
+}
+
+
+.navbar ul li a:hover{
+  color:#23dbdb
+}
+
+.navbar ul li:focus{
+  border:1px solid #23dbdb; 
+  color:#23dbdb;
+  transform: .2s;
+  
+}
+
+/*
+
+.navbar ul li :hover{
+  padding-bottom: 10px;
+  color: #23dbdb;
+ 
+  border:1px solid #23dbdb;
+  border-radius: 5%;
+  transition: .3s linear;
+
+}
+*/
+
+/*
 
 .navbar ul li > a:hover {
   color: black;
@@ -453,6 +478,9 @@ input:focus {
   opacity: 1;
   border-radius: 5%;
 }
+
+
+*/
 
 .nav-link {
   margin: auto;
@@ -472,8 +500,13 @@ input:focus {
     border-color 0.15s ease-in-out;
 }
 
-.nav-link:hover {
+.cart {
+  margin: auto;
+}
 
+.nav-link:hover {
   color: #ffffff;
   font-family: Catamaran;
 }
+
+

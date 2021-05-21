@@ -582,7 +582,7 @@
 }
 
 .single-bestseller .bestseller-text .price ul li span.new-price {
-  color: #f07c29;
+  color: #f07c29;    
   font-size: 18px;
 }
 
@@ -1081,7 +1081,11 @@
 
 .breadcrumbs-area {
   border-bottom: 1px solid #e5e5e5;
-  padding: 12px 0;
+  padding: 71px 0 4px;
+}
+
+.breadcrumbs-area a:hover {
+  color: #02475e !important;
 }
 
 .breadcrumbs-menu ul li {
@@ -2099,10 +2103,6 @@
   font-weight: 400;
 }
 
-.blog-side-menu ul li a:hover,
-.catagory-menu ul li a:hover {
-  color: #f07c29;
-}
 
 .blog-side-menu ul li:first-child {
   margin-top: 0;
@@ -2168,11 +2168,6 @@
   text-decoration: none;
 }
 
-.blog-tag ul li a:hover {
-  background: #f07c29 none repeat scroll 0 0;
-  border: 1px solid #f07c29;
-  color: #fff;
-}
 
 .author-destils {
   overflow: hidden;
@@ -2497,3 +2492,12 @@
 }
 
 
+
+
+
+.fund {
+  color: #333;
+}
+.fund:hover {
+  color: #02475e;
+}
