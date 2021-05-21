@@ -393,6 +393,10 @@ input:focus {
   width: 100%;
   z-index: 200;
 }
+ nav ul {
+  float:right;
+  margin-right: 30px;
+}
 
 .logo img {
   width: 90px;
