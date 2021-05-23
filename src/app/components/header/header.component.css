@@ -198,6 +198,9 @@ img {
 
 /* header media*/
 
+/*
+
+
 .row {
   display: -ms-flexbox;
   display: flex;
@@ -205,7 +208,7 @@ img {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
-}
+}                                       */
 
 /* mobile media */
 
@@ -340,12 +343,16 @@ input:focus {
 
 /********************************************************************/
 
+
+
 .navbar {
   background-color: #151823;
   position: fixed !important;
   width: 100%;
   z-index: 200;
 }
+
+
 
 .navbar .brand a{
   color: deeppink;
@@ -371,16 +378,22 @@ a .dott{
   
 }
 
- nav ul {
-  padding-left: 420px;
+nav ul {
+  padding-right: 70px;
+}
+nav ul li {
+  padding-right: 20px;
 }
 
+ 
+/*
 
 .navbar ul{
-    float:right
-}
+  display: content;
+    
+}   
 .navbar ul li {
-  display: inline-block;
+  float:right;
   margin-right: -20px;
   position: relative;
   
@@ -392,14 +405,14 @@ a .dott{
   margin-right: -15px;
   margin-left: -15px;
   
-}
+}     */
 
 
 .btnToggleUser {
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
-  margin-left: 55px;
+  margin-left: 20px;  
   margin-top: 7px;
   color:#ffffff;
   text-align: center;
@@ -419,7 +432,7 @@ a .dott{
 .btnToggleUser::after{
   content: '';
   position: absolute;
-  width:157%;
+  width:200%;
   transform: scaleX(0);
   height:2px;
   bottom: -12px;
@@ -520,9 +533,10 @@ a .dott{
 
 .navbar ul li a:focus{ 
   color:#23dbdb;
+   
   transform: .2s;
   
-}
+}               
 
 /*
 
@@ -576,10 +590,10 @@ a .dott{
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out;
-}
+}                                                     
 
 */
-
+                              /*
 .cart {
   margin: auto;
 }
@@ -589,10 +603,10 @@ a .dott{
   font-family: Catamaran;
 }
 
-
+                                    */
 
 /* media style */
-
+/*
 
 @media(max-width:540px){
     nav ul{
@@ -620,6 +634,6 @@ a .dott{
     float:left
   }
 }
-
+                                      */
 
 /*	540px	720px	960px	1140px  */

@@ -60,14 +60,16 @@
 
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <div class="brand text-center logo-xs-mrg">
-            <a  class="brand-link" routerLink="/">E<span class="dott">.</span>B<span class="o-1">O</span><span class="o-2">O</span>K</a>
-          </div>
+          
+            <div class="brand text-center ">
+              <a  class="brand-link" routerLink="/">E<span class="dott">.</span>B<span class="o-1">O</span><span class="o-2">O</span>K</a>
+            </div>
+          
           <button class="navbar-toggler" (click)="toggleNavbar()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa fa-sort-desc" aria-hidden="true"></i>
           </button>
           <div class="collapse navbar-collapse"  [class.show]="isOpen"  id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ms-auto">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
               </li>
@@ -103,7 +105,9 @@
 
             </ul>
 
-            
+          </div>
+        </div>
+      </nav>
               
             
               
@@ -113,9 +117,7 @@
             <!--
 
             <button  (click)="logout()" class="nav-link"><i class="fa fa-sign-out" aria-hidden="true">Log Out</i></button>
-   -->       </div>
-        </div>
-      </nav>    
+   -->          
 
     <!-- end--end -->
 </header>
