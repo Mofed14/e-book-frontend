@@ -589,6 +589,7 @@ button {
 }
 .s131 form .inner-form .input-field.first-wrap input {
   border-right: 0;
+  
 }
 .s131 form .inner-form .input-field.second-wrap {
   min-width: 260px;
@@ -681,6 +682,7 @@ button {
 .s131 form .inner-form .input-field.third-wrap .btn-search {
   height: 100%;
   width: 100%;
+  
   white-space: nowrap;
   font-size: 20px;
   color: #fff;
