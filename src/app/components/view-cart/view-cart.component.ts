@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NzModalService } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'app-view-cart',
@@ -9,8 +10,9 @@ import { Router } from '@angular/router';
 export class ViewCartComponent implements OnInit {
   storagebooks: [];
   books: any;
-
-  constructor(private router: Router) {}
+  empty: any;
+  full: any;
+  constructor(private router: Router, private modal: NzModalService) {}
 
   ngOnInit(): void {
     this.getbooksfromlocalstorage();
@@ -23,7 +25,23 @@ export class ViewCartComponent implements OnInit {
       );
     } else {
       this.storagebooks = [];
-      this.router.navigate(['../home']);
+      this.empty = this.storagebooks;
     }
+  }
+
+  removelocalstorage() {
+    this.modal.confirm({
+      nzTitle: 'Are you sure delete this task?',
+      nzContent: '<b style="color: red;">Some descriptions</b>',
+      nzOkText: 'Yes',
+      nzOkType: 'primary',
+      nzOkDanger: true,
+      nzOnOk: () => {
+        localStorage.removeItem(localStorage.getItem('userData'));
+        this.getbooksfromlocalstorage();
+      },
+      nzCancelText: 'No',
+      nzOnCancel: () => console.log('Cancel'),
+    });
   }
 }

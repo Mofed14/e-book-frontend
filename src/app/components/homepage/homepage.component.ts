@@ -81,15 +81,15 @@ export class HomepageComponent implements OnInit {
     });
   }
 
-  getdata(event) {
+  adddatatolocalstorage(event) {
     ////////// هتجيب الداتا القديمه وتضيف ليها الجديده عشان اي كتاب اضغط عليه اضيفه في الوكل استورج
     const oldobject = JSON.parse(localStorage.getItem(this.keybookdata)) || [];
     if (oldobject.length >= 5) {
-      this.message.warning('The cart is full');
+      this.message.warning('Your cart is full');
     } else {
       oldobject.push(event);
       localStorage.setItem(this.keybookdata, JSON.stringify(oldobject));
-      this.dataservice.addbookstocart();
+      this.message.success('The book added to your cart');
     }
   }
 }

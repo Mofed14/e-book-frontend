@@ -1,4 +1,35 @@
-<div class="shop-main-area mb-70">
+
+
+<div *ngIf="empty">
+  <div class="breadcrumbs-area mb-70">
+    <div class="container">
+      <nz-breadcrumb class="pt-2">
+        <nz-breadcrumb-item >
+         <a routerLink="/">Home</a>
+        </nz-breadcrumb-item>
+        <nz-breadcrumb-item>
+          View-Cart
+        </nz-breadcrumb-item>
+      </nz-breadcrumb>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row empty">
+      <div class="col-12">
+        <nz-result nzStatus="404" nzTitle="404" nzSubTitle="Sorry, the page you visited does not have any data.">
+          <div nz-result-extra>
+            <button nz-button routerLink="/" nzType="primary">Back Home</button>
+          </div>
+        </nz-result>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="shop-main-area mb-70" *ngIf="!empty">
   <div class="breadcrumbs-area mb-70">
     <div class="container">
       <nz-breadcrumb class="pt-2">
@@ -18,6 +49,9 @@
 
               <div class="section-title-5 mb-30">
                   <h2>My Cart</h2>
+              </div>
+              <div>
+                <button class="delete-btn" nz-button nzType="dashed" (click)="removelocalstorage()">Clear cart</button>
               </div>
               <div class="toolbar mb-30">
                   <div class="shop-tab">

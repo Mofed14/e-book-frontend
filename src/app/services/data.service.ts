@@ -5,10 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
   constructor() {
-    this.addbookstocart();
+    this.getdatafromlocalstorage();
   }
   storagebooks: any;
-  addbookstocart() {
+  getdatafromlocalstorage() {
     this.storagebooks = JSON.parse(
       localStorage.getItem(localStorage.getItem('userData'))
     );

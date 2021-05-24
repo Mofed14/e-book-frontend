@@ -1077,3 +1077,7 @@ img {
 .bt {
   border-top: 1px solid #e5e5e5;
 }
+
+.delete-btn {
+  margin-right: 8px;
+}

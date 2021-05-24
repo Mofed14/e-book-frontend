@@ -36,7 +36,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.listAllBooks(this.limit);
-    this.addbookstocart();
+    // this.addbookstocart();
   }
   ////////// logout ///////////////
 
@@ -69,15 +69,15 @@ export class HeaderComponent implements OnInit {
     this.books = res;
   }
 
-  addbookstocart() {
-    // this.data.addbookstocart();
-    this.lsbooks = this.data.storagebooks;
-  }
+  // addbookstocart() {
+  //   // this.data.addbookstocart();
+  //   this.lsbooks = this.data.storagebooks;
+  // }
 
-  removelocalstorage() {
-    localStorage.removeItem(localStorage.getItem('userData'));
-    this.lsbooks = [];
-    // this.listAllBooks(this.limit);
-    this.router.navigate(['/']);
-  }
+  // removelocalstorage() {
+  //   localStorage.removeItem(localStorage.getItem('userData'));
+  //   this.lsbooks = [];
+  //   // this.listAllBooks(this.limit);
+  //   this.router.navigate(['/']);
+  // }
 }
