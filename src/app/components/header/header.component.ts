@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { ApiService } from '../../services/api.service';
 import { DataService } from '../../services/data.service';
+import { NzIconService } from 'ng-zorro-antd/icon';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -23,8 +25,13 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private message: NzMessageService,
     private api: ApiService,
-    public data: DataService
-  ) {}
+    public data: DataService,
+    private iconService: NzIconService
+  ) {
+    this.iconService.fetchFromIconfont({
+      scriptUrl: 'https://at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
+    });
+  }
 
   // toggle in the small screens
   isOpen = false;

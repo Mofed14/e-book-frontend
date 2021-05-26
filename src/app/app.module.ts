@@ -34,6 +34,15 @@ import { NzResultModule } from 'ng-zorro-antd/result';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzNotificationModule } from 'ng-zorro-antd/notification';
 import { NgwWowModule } from 'ngx-wow';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import {
+  AccountBookFill,
+  AlertFill,
+  AlertOutline,
+} from '@ant-design/icons-angular/icons';
+
+// const icons: IconDefinition[] = [AccountBookFill, AlertOutline, AlertFill];
 
 @NgModule({
   declarations: [
@@ -71,6 +80,7 @@ import { NgwWowModule } from 'ngx-wow';
     NzButtonModule,
     NzNotificationModule,
     NgwWowModule,
+    NzAvatarModule,
   ],
   bootstrap: [AppComponent],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
