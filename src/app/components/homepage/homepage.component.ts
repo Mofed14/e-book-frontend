@@ -33,8 +33,9 @@ export class HomepageComponent implements OnInit {
   value = 5;
   closeResult: string;
   keybookdata = localStorage.getItem('userData');
-  // هخلي اليوزر المتخذن هو المفتاح بتاع الكتب اللي هتتخزن
   data;
+  url = 'https://joberapp.net/e-library/';
+
   private subject = new Subject<any>();
 
   ngOnInit(): void {
@@ -82,7 +83,6 @@ export class HomepageComponent implements OnInit {
   }
 
   adddatatolocalstorage(event) {
-    ////////// هتجيب الداتا القديمه وتضيف ليها الجديده عشان اي كتاب اضغط عليه اضيفه في الوكل استورج
     const oldobject = JSON.parse(localStorage.getItem(this.keybookdata)) || [];
     if (oldobject.length >= 5) {
       this.message.warning('Your cart is full');

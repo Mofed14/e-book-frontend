@@ -33,10 +33,7 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzResultModule } from 'ng-zorro-antd/result';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzNotificationModule } from 'ng-zorro-antd/notification';
- 
-
-
-
+import { NgwWowModule } from 'ngx-wow';
 
 @NgModule({
   declarations: [
@@ -73,7 +70,7 @@ import { NzNotificationModule } from 'ng-zorro-antd/notification';
     NzResultModule,
     NzButtonModule,
     NzNotificationModule,
-    
+    NgwWowModule,
   ],
   bootstrap: [AppComponent],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

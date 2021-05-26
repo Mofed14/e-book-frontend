@@ -1,70 +1,11 @@
 <header>
-
-    <!-- header-mid-area-start -->
-
-
-    <!--
-    <div class="header-mid-area ptb-40">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-5 col-12">
-                    <div class="header-search">
-                        <form>
-                            <input type="text" name="input" [(ngModel)]="input" placeholder="Search entire store here...">
-                            <a (click)="search()"><i class="fa fa-search"></i></a>
-                            <div class="results">
-                              Results: {{books && books.length}}
-                          </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-4 col-12">
-                    <div class="logo-area text-center logo-xs-mrg">
-                        <a routerLink="/"><img [src]="logo" alt="logo"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="my-cart">
-                        <ul>
-                            <li><a><i class="fa fa-shopping-cart"></i>My Cart</a>
-                                <span *ngIf="lsbooks">{{lsbooks.length}}</span>
-                                <div class="mini-cart-sub">
-                                    <div class="cart-product" *ngFor="let item of lsbooks">
-                                        <div class="single-cart">
-                                            <div class="cart-img">
-                                                <a><img src="../../../{{item.image}}" alt="book"></a>
-                                            </div>
-                                            <div class="cart-info">
-                                                <h5><a>{{item.title}}</a></h5>
-                                                <p>{{item.price}}</p>
-                                            </div>
-                                            <div class="cart-icon">
-                                                <a><i class="fa fa-remove"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cart-bottom">
-                                        <a *ngIf="lsbooks" routerLink="viewcart" class="view-cart">view cart</a>
-                                        <a *ngIf="lsbooks"  (click)="removelocalstorage()">clear cart</a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>    -->
-    <!-- header-mid-area-end -->
     <!--start --navbar-->
-
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
 
             <div class="brand text-center ">
               <a  class="brand-link" routerLink="/">E<span class="dott">.</span>B<span class="o-1">O</span><span class="o-2">O</span>K</a>
             </div>
-
           <button class="navbar-toggler" (click)="toggleNavbar()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa fa-sort-desc" aria-hidden="true"></i>
           </button>
@@ -76,16 +17,9 @@
               <li class="nav-item">
                 <a class="nav-link" routerLink="books">Shop</a>
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" routerLink="browse">Browse</a>
-              </li> -->
               <li class="nav-item">
                 <a class="nav-link" routerLink="aboutus">About Us</a>
-              </li> <!--
-              <li class="nav-item logoutBtn">
-                <a type="submit" (click)="logout()" class="nav-link">Logout</a>
-            </li>    -->
-
+              </li>
 
             <div class="row dpClass">
               <div class="col">
@@ -100,35 +34,9 @@
                 </div>
               </div>
             </div>
-
-
-
             </ul>
-
           </div>
         </div>
       </nav>
-
-
-
-
-
-
-            <!--
-
-            <button  (click)="logout()" class="nav-link"><i class="fa fa-sign-out" aria-hidden="true">Log Out</i></button>
-   -->
-
     <!-- end--end -->
 </header>
-
-
-
-
-<!--
-
-  logo
-
-<img [src]="logo" alt="logo">
-
--->

@@ -28,7 +28,7 @@ export class BookComponent implements OnInit {
   bookid: any;
   bookdata: any;
   currentRate = 5;
-
+  url = 'https://joberapp.net/e-library/';
   public isCollapsed = false;
 
   ngOnInit(): void {

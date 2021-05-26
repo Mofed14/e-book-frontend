@@ -1,5 +1,3 @@
-
-
 <div *ngIf="empty">
   <div class="breadcrumbs-area mb-70">
     <div class="container">
@@ -26,13 +24,10 @@
   </div>
 </div>
 
-
-
-
 <div class="shop-main-area mb-70" *ngIf="!empty">
   <div class="breadcrumbs-area mb-70">
     <div class="container">
-      <nz-breadcrumb class="pt-2">
+      <nz-breadcrumb>
         <nz-breadcrumb-item >
           <a routerLink="/">Home</a>
         </nz-breadcrumb-item>
@@ -55,39 +50,11 @@
               </div>
               <div class="toolbar mb-30">
                   <div class="shop-tab">
-                      <!-- <div class="tab-3">
-                          <ul class="nav">
-                              <li><a class="active" href="#th" data-toggle="tab"><i class="fa fa-th-large"></i>Grid</a></li>
-                              <li><a href="#list" data-toggle="tab"><i class="fa fa-bars"></i>List</a></li>
-                          </ul>
-                      </div> -->
                       <div class="list-page">
                           <p>Items {{storagebooks.length}}</p>
                       </div>
                   </div>
 
-                  <!-- <div class="field-limiter">
-                      <div class="control">
-                          <span>Show</span>
-                          chosen-start
-                          <select data-placeholder="Default Sorting" style="width:50px;" class="chosen-select" tabindex="1">
-                              <option value="Sorting">1</option>
-                              <option value="popularity">2</option>
-                              <option value="rating">3</option>
-                              <option value="date">4</option>
-                          </select>
-                          chosen-end
-                      </div>
-                  </div> -->
-                  <!-- <div class="toolbar-sorter">
-                      <span>Sort By</span>
-                      <select id="sorter" class="sorter-options" data-role="sorter">
-                          <option selected="selected" value="position"> Position </option>
-                          <option value="name"> Product Name </option>
-                          <option value="price"> Price </option>
-                      </select>
-                      <a href="#"><i class="fa fa-arrow-up"></i></a>
-                  </div> -->
               </div>
               <!-- tab-area-start -->
               <div class="tab-content">
@@ -98,7 +65,7 @@
                               <div class="product-wrapper mb-40" >
                                   <div class="product-img">
                                       <a>
-                                          <img src="../../../{{book.image}}" alt="book" class="primary">
+                                          <img src="{{url}}{{book.image}}" alt="book" class="primary">
                                       </a>
                                       <div class="quick-view">
                                           <a class="action-view" routerLink="../product-details/{{book.id}}" title="Quick View">
@@ -113,15 +80,6 @@
                                       </div>
                                   </div>
                                   <div class="product-details text-center">
-                                      <!-- <div class="product-rating">
-                                          <ul>
-                                              <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                              <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                              <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                              <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                              <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                          </ul>
-                                      </div> -->
                                       <h4><a>{{book.title}}</a></h4>
                                       <div class="product-price">
                                           <ul>
@@ -144,15 +102,6 @@
                   <div class="list-page-2">
                       <p>Items {{storagebooks.length}}</p>
                   </div>
-                  <!-- <div class="page-number">
-                      <ul>
-                          <li><a href="#" class="active">1</a></li>
-                          <li><a href="#">2</a></li>
-                          <li><a href="#">3</a></li>
-                          <li><a href="#">4</a></li>
-                          <li><a href="#" class="angle"><i class="fa fa-angle-right"></i></a></li>
-                      </ul>
-                  </div> -->
               </div>
               <!-- pagination-area-end -->
           </div>

@@ -12,6 +12,8 @@ export class ViewCartComponent implements OnInit {
   books: any;
   empty: any;
   full: any;
+  url = 'https://joberapp.net/e-library/';
+
   constructor(private router: Router, private modal: NzModalService) {}
 
   ngOnInit(): void {

@@ -21,6 +21,7 @@ export class ProductDetailsComponent implements OnInit {
   rates: any;
   localstorage: void;
   err: any;
+  url = 'https://joberapp.net/e-library/';
 
   constructor(
     private api: ApiService,
