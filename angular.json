@@ -28,28 +28,18 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/wowjs/css/libs/animate.css",
-              "node_modules/animate.css/animate.min.css",
-              "node_modules/flexslider/flexslider.css",
+              "./node_modules/wowjs/css/libs/animate.css",
               "node_modules/font-awesome/css/font-awesome.min.css",
               "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/flexslider/flexslider.css",
               "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
-              "src/styles.css"
-
+               "src/styles.css"
             ],
-
 
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
               "node_modules/bootstrap/dist/js/bootstrap.js",
-              "node_modules/wowjs/dist/wow.js",
-              "node_modules/flexslider/jquery.flexslider-min.js",
-              "node_modules/popper.js/dist/popper.min.js",
-              "node_modules/modernizr/src/Modernizr.js",
-              "node_modules/jquery-parallax.js/parallax.min.js"
-
-
-
+              "node_modules/wowjs/dist/wow.js"
 
             ]
           },
