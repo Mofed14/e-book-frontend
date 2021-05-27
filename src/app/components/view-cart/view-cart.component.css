@@ -2,6 +2,44 @@
 /*  18. Shop page
 /*----------------------------------------*/
 
+.breadcrumbs-area {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 71px 0 4px;
+}
+
+.breadcrumbs-menu ul li {
+  display: inline-block;
+  margin-right: 20px;
+  position: relative;
+}
+
+.breadcrumbs-menu ul li a {
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  font-family: "Rufina", serif;
+  font-weight: 400;
+}
+
+.breadcrumbs-menu ul li a.active {
+  color: #f07c29;
+}
+
+.breadcrumbs-menu ul li::before {
+  background: #818181 none repeat scroll 0 0;
+  content: "";
+  height: 13px;
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+}
+
+.breadcrumbs-menu ul li:last-child:before {
+  display: none;
+}
+
 .section-title-5 h2 {
   color: #3f3f3f;
   display: inline-block;
