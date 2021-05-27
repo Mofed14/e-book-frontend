@@ -4,6 +4,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { findIndex } from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-details',
@@ -22,6 +23,13 @@ export class ProductDetailsComponent implements OnInit {
   localstorage: void;
   err: any;
   url = 'https://joberapp.net/e-library/';
+  localbooks = JSON.parse(
+    localStorage.getItem(localStorage.getItem('userData'))
+  );
+  removed: any;
+  indexOfElement: any;
+  newBooks: any;
+  arr: [];
 
   constructor(
     private api: ApiService,
@@ -64,6 +72,23 @@ export class ProductDetailsComponent implements OnInit {
           'Pleace check if you have balance or you have this book'
         );
       } else if (res.success === true) {
+        // when buy book was added in cart should delete from cart. simply i buy i so why it is still in cart
+        this.localbooks.map((element) => {
+          if (this.bookid === element.id) {
+            // console.log(element);
+            // console.log(this.localbooks);
+            this.indexOfElement = this.localbooks.indexOf(element);
+            // console.log(this.indexOfElement);
+            // splice(starting index, how many values to remove);
+            this.newBooks = this.localbooks.splice(this.indexOfElement);
+            console.log(this.newBooks);
+
+            // localStorage.setItem(
+            //   localStorage.getItem('userData'),
+            //   JSON.stringify(this.newBooks)
+            // );
+          }
+        });
         this.message.success('user successfully purchased book');
         this.router.navigate(['/']);
       } else {
@@ -130,8 +155,8 @@ export class ProductDetailsComponent implements OnInit {
   //////////// getbookbybookid ///////////
   getbookbybookid(bookid) {
     this.api.getbookbybookid(this.bookid).subscribe((res) => {
-      console.log(res);
       this.bookdata = res.bookdata;
+      console.log(this.bookdata.id);
     });
   }
   //////////// getbookbybookid ///////////
@@ -156,7 +181,6 @@ export class ProductDetailsComponent implements OnInit {
       rate: this.rateform.value.rate,
     };
     this.api.userRate(body).subscribe((res) => {
-      console.log(res);
       if (res.error === 400) {
         this.message.info('Bad request info');
       } else if (res.error === 422) {
