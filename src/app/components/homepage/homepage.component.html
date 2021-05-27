@@ -98,13 +98,13 @@
                 <!-- pagination-area-start -->
                 <div class="pagination-area mt-50">
                     <div class="page-number">
-                      <div *ngIf="limit < 24">
+                      <div *ngIf="limit < 999">
                         <a (click)="getMore()" class="more d-block text-center"
                           >More <i class="fa fa-chevron-circle-down"></i></a
                         >
                       </div>
                     </div>
-                    <div *ngIf="limit > 8 && limit <= 24">
+                    <div *ngIf="limit > 8 && limit <= 999">
                       <a (click)="getless()" class="less text-left"
                         >less <i class="fa fa-chevron-circle-up"></i></a
                       >
