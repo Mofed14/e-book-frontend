@@ -33,13 +33,11 @@ export class ApiService {
   }
 
   buyBook(body): Observable<any> {
-    return this.http
-      .post(url + '/api/user/register_book.php', body, this.options)
-      .pipe(
-        map((res) => {
-          return res as any;
-        })
-      );
+    return this.http.post(url + '/api/user/register_books.php', body).pipe(
+      map((res) => {
+        return res as any;
+      })
+    );
   }
 
   getUserBooksByUserId(userid): Observable<any> {

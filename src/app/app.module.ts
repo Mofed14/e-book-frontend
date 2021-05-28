@@ -41,6 +41,7 @@ import {
   AlertFill,
   AlertOutline,
 } from '@ant-design/icons-angular/icons';
+import { NzAffixModule } from 'ng-zorro-antd/affix';
 
 // const icons: IconDefinition[] = [AccountBookFill, AlertOutline, AlertFill];
 
@@ -81,6 +82,7 @@ import {
     NzNotificationModule,
     NgwWowModule,
     NzAvatarModule,
+    NzAffixModule,
   ],
   bootstrap: [AppComponent],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

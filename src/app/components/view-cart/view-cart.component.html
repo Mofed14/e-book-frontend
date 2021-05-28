@@ -46,7 +46,17 @@
                   <h2>My Cart</h2>
               </div>
               <div>
-                <button class="delete-btn" nz-button nzType="dashed" (click)="removelocalstorage()">Clear cart</button>
+                <div class="d-flex flex-row-reverse bd-highlight">
+                  <div class="p-2 bd-hig">
+                    <nz-affix [nzOffsetTop]="offsetTop">
+                      <button nz-button nzType="primary" (click)="setOffsetTop();buybook()">
+                        <span>Buy All</span>
+                      </button>
+                    </nz-affix>
+                  </div>
+
+                </div>
+                <button class="delete-btn " nz-button nzType="dashed" (click)="removelocalstorage()">Clear cart</button>
               </div>
               <div class="toolbar mb-30">
                   <div class="shop-tab">
@@ -54,8 +64,7 @@
                           <p>Items {{storagebooks.length}}</p>
                       </div>
                   </div>
-
-              </div>
+                </div>
               <!-- tab-area-start -->
               <div class="tab-content">
                   <div class="tab-pane fade show active" id="th">
@@ -95,6 +104,7 @@
                               </div>
                               <!-- single-product-end -->
                           </div>
+
               </div>
               <!-- tab-area-end -->
               <!-- pagination-area-start -->
