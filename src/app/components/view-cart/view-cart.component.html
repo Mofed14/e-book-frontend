@@ -45,8 +45,18 @@
               <div class="section-title-5 mb-30">
                   <h2>My Cart</h2>
               </div>
+              <div class="d-flex flex-row-reverse bd-highlight">
+                <div class="p-2 bd-hig">
+                  <nz-affix [nzOffsetTop]="offsetTop">
+                    <button nz-button nzType="primary" (click)="open(fundmodal)">
+                      <span>Add money</span>
+                    </button>
+                  </nz-affix>
+                </div>
+
+              </div>
               <div>
-                <div class="d-flex flex-row-reverse bd-highlight">
+                <div>
                   <div class="p-2 bd-hig">
                     <nz-affix [nzOffsetTop]="offsetTop">
                       <button nz-button nzType="primary" (click)="buybook()">
@@ -55,6 +65,13 @@
                     </nz-affix>
                   </div>
 
+                </div>
+                <div class="d-flex flex-row-reverse bd-highlight">
+                  <nz-row [nzGutter]="16">
+                    <nz-col [nzSpan]="12" class="balance">
+                      <nz-statistic [nzValue]="balances" [nzTitle]="'Your Balance'"></nz-statistic>
+                    </nz-col>
+                  </nz-row>
                 </div>
                 <button class="delete-btn " nz-button nzType="dashed" (click)="removelocalstorage()">Clear cart</button>
               </div>
@@ -118,3 +135,28 @@
       </div>
   </div>
 </div>
+
+
+
+<ng-template #fundmodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add money</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group" [formGroup]="addfundsform">
+        <label>Amount</label>
+        <div class="input-group">
+          <input type="number" min="0" class="form-control"  name="amount" formControlName="amount" >
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" [disabled]="!addfundsform.valid" class="btn btn-outline-dark"  (click)="modal.close('Save click')" (click)="addfunds()">Save</button>
+  </div>
+</ng-template>
+

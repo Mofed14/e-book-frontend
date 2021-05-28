@@ -4,6 +4,7 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-view-cart',
@@ -20,23 +21,53 @@ export class ViewCartComponent implements OnInit {
   buyform: any;
   booksIds: any;
   Ids: any;
+  addfundsform: any;
+  userid = localStorage.getItem('userData');
+  balances: any;
+  closeResult = '';
 
   constructor(
     private router: Router,
     private modal: NzModalService,
     private api: ApiService,
     private fb: FormBuilder,
-    private message: NzMessageService
+    private message: NzMessageService,
+    private modalService: NgbModal
   ) {}
 
   ngOnInit(): void {
     this.getbooksfromlocalstorage();
     this.setOffsetTop();
     this.form();
+    this.formfunds();
+    this.getBlance();
   }
 
   setOffsetTop(): void {
     this.offsetTop += 70;
+  }
+
+  open(mofed) {
+    this.modalService
+      .open(mofed, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
 
   getbooksfromlocalstorage() {
@@ -97,5 +128,40 @@ export class ViewCartComponent implements OnInit {
         console.log(res);
       }
     });
+  }
+
+  getBlance() {
+    this.api.getBlance(this.userid).subscribe((res) => {
+      this.balances = res.balance;
+      console.log(this.balances);
+    });
+  }
+
+  formfunds() {
+    this.addfundsform = this.fb.group({
+      user_id: this.userid,
+      amount: ['', Validators.required],
+    });
+  }
+
+  addfunds() {
+    const body = {
+      user_id: this.addfundsform.value.user_id,
+      amount: this.addfundsform.value.amount,
+    };
+    if (body.amount) {
+      this.api.userAddFunds(body).subscribe((res) => {
+        if (res.error === 400) {
+          this.message.error('Please enter the funds');
+        } else if (res.success === true) {
+          this.message.success('Now you can buy any thing');
+          this.getBlance();
+        } else {
+          console.log(res);
+        }
+      });
+    } else {
+      this.message.error('Please enter the funds');
+    }
   }
 }
