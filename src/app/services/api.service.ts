@@ -110,4 +110,12 @@ export class ApiService {
     // tslint:disable-next-line:no-unused-expression
     return !localStorage.getItem('userData');
   }
+
+  getBlance(userid): Observable<any> {
+    return this.http.get(url + '/api/user/get_balance.php?id=' + userid).pipe(
+      map((res) => {
+        return res as any;
+      })
+    );
+  }
 }

@@ -17,7 +17,6 @@ export class ViewCartComponent implements OnInit {
   full: any;
   url = 'https://joberapp.net/e-library/';
   offsetTop = 10;
-  nzOffsetBottom = 10;
   buyform: any;
   booksIds: any;
   Ids: any;

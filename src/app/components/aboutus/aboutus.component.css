@@ -136,4 +136,18 @@ i {
   }
 }
 
+@media (max-width: 720px) {
+  .bad-p {
+    max-height: 400px;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 483px) {
+  .bad-p {
+    max-height: 400px;
+    overflow: hidden;
+  }
+}
+
 /* end style for medium screen */

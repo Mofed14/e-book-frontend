@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
           this.message.error('Incorrect password');
         } else if (res.success === true) {
           localStorage.setItem('userData', res.userdata.id);
+          localStorage.setItem('user', JSON.stringify(res.userdata));
           this.router.navigate(['/home']);
           this.message.loading('Successfully login');
         } else {

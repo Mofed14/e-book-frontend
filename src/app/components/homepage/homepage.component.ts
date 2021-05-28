@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
-// import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { DataService } from '../../services/data.service';
 import { Subject } from 'rxjs';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-homepage',
@@ -18,13 +19,19 @@ export class HomepageComponent implements OnInit {
   userbooks: any;
   userbook: any;
   localbooksids: any;
+  user: any;
+  balances: any;
+  formBalnce: any;
+  addfundsform: any;
   constructor(
     private api: ApiService,
     private message: NzMessageService,
     private modal: NzModalService,
     public dataservice: DataService,
     private router: Router,
-    private notification: NzNotificationService
+    private notification: NzNotificationService,
+    private fb: FormBuilder,
+    private modalService: NgbModal
   ) {}
   buyform: any;
   rates: any;
@@ -36,19 +43,25 @@ export class HomepageComponent implements OnInit {
   limit = 16;
   items: any;
   value = 5;
-  closeResult: string;
+  closeResult = '';
   keybookdata = localStorage.getItem('userData');
   data;
   url = 'https://joberapp.net/e-library/';
   userid = localStorage.getItem('userData');
+  offsetTop = 10;
 
   private subject = new Subject<any>();
 
   ngOnInit(): void {
     this.listAllBooks(this.limit);
     this.getuserbooks();
-    // this.form();
-    // console.log(this.bookid);
+    this.getBlance();
+    this.formfunds();
+    this.setOffsetTop();
+  }
+
+  setOffsetTop(): void {
+    this.offsetTop += 70;
   }
 
   // tslint:disable-next-line:typedef
@@ -120,5 +133,63 @@ export class HomepageComponent implements OnInit {
         console.log(res);
       }
     });
+  }
+
+  getBlance() {
+    this.api.getBlance(this.userid).subscribe((res) => {
+      this.balances = res.balance;
+      console.log(this.balances);
+    });
+  }
+
+  open(mofed) {
+    this.modalService
+      .open(mofed, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+
+  formfunds() {
+    this.addfundsform = this.fb.group({
+      user_id: this.userid,
+      amount: ['', Validators.required],
+    });
+  }
+
+  addfunds() {
+    const body = {
+      user_id: this.addfundsform.value.user_id,
+      amount: this.addfundsform.value.amount,
+    };
+    if (body.amount) {
+      this.api.userAddFunds(body).subscribe((res) => {
+        if (res.error === 400) {
+          this.message.error('Please enter the funds');
+        } else if (res.success === true) {
+          this.message.success('Now you can buy any thing');
+          this.getBlance();
+        } else {
+          console.log(res);
+        }
+      });
+    } else {
+      this.message.error('Please enter the funds');
+    }
   }
 }
