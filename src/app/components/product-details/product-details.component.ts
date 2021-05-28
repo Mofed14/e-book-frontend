@@ -64,17 +64,20 @@ export class ProductDetailsComponent implements OnInit {
 
   ///////// buy book ////////////////
   form() {
+    console.log(this.bookid);
+
     this.buyform = this.fb.group({
       user_id: localStorage.getItem('userData'),
-      books: [this.bookid],
+      books: [],
     });
   }
 
   buybook() {
     const body = {
       user_id: this.buyform.value.user_id,
-      books: [this.buyform.value.book_id],
+      books: [this.bookid],
     };
+    console.log(body);
     this.api.buyBook(body).subscribe((res) => {
       if (res.error === 422) {
         this.message.info(

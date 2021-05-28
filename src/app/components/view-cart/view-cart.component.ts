@@ -75,15 +75,17 @@ export class ViewCartComponent implements OnInit {
   form() {
     this.buyform = this.fb.group({
       user_id: localStorage.getItem('userData'),
-      books: [this.booksIds],
+      books: [],
     });
   }
 
   buybook() {
     const body = {
       user_id: this.buyform.value.user_id,
-      books: [this.buyform.value.book_id],
+      books: this.booksIds,
     };
+    console.log(body);
+
     this.api.buyBook(body).subscribe((res) => {
       if (res.error === 422) {
         this.message.info(
@@ -94,8 +96,8 @@ export class ViewCartComponent implements OnInit {
         );
       } else if (res.success === true) {
         this.message.success('user successfully purchased book');
-        this.router.navigate(['/']);
         localStorage.removeItem(localStorage.getItem('userData'));
+        this.router.navigate(['/']);
       } else {
         console.log(res);
       }

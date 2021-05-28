@@ -39,6 +39,8 @@ export class BookComponent implements OnInit {
   // tslint:disable-next-line:typedef
   getuserbooks() {
     this.api.getUserBooksByUserId(this.userid).subscribe((res) => {
+      console.log(res);
+
       if (res.error === 404) {
         this.error = res.error;
         this.message.info('You don`t have any books ');
