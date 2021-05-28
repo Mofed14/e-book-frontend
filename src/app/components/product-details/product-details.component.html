@@ -30,6 +30,7 @@
                         <div class="col-lg-1"></div>
                         <div class="col-lg-5 col-md-6 col-12">
                             <div class="product-info-main">
+
                                 <div class="page-title">
                                     <h1>{{bookdata.title}}</h1>
                                 </div>
@@ -52,8 +53,14 @@
                                     <div class="price-final">
                                         <span>${{bookdata.price}}</span>
                                       </div>
-                                      <a (click)="open(ccontent)" class="fund">Add funds <i  class="fa fa-money"></i></a>
-
+                                        <div class="p-2 bd-hig">
+                                          <nz-affix [nzOffsetTop]="offsetTop">
+                                            <button nz-button nzType="primary" (click)="open(ccontent)">
+                                              <span>Add money</span>
+                                            </button>
+                                          </nz-affix>
+                                          <p>Your plance {{balances}}</p>
+                                        </div>
                                     </div>
                                     <div class="product-add-form">
                                       <form>

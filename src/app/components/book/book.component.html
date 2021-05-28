@@ -66,13 +66,13 @@
                             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6" *ngFor="let book of books">
                                 <!-- single-product-start -->
                                 <div class="product-wrapper mb-40" >
-                                    <div class="product-img">
+                                    <div class="product-img" style="height: 400px;">
                                         <a>
                                             <img src="{{url}}{{book.image}}" alt="book" class="primary">
                                         </a>
                                         <div class="quick-view">
                                             <a class="action-view"  (click)="open(ccontent);getbookbybookid(book.book_id);getrates(book.book_id)" title="Quick View">
-                                                <i class="fa fa-search-plus"></i>
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
                                             </a>
                                         </div>
                                         <div class="product-flag">

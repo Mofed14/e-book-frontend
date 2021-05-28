@@ -29,7 +29,9 @@ export class ProductDetailsComponent implements OnInit {
   removed: any;
   indexOfElement: number;
   result: any;
-
+  offsetTop = 10;
+  balances: any;
+  userid = localStorage.getItem('userData');
   constructor(
     private api: ApiService,
     private message: NzMessageService,
@@ -47,9 +49,14 @@ export class ProductDetailsComponent implements OnInit {
     this.formfunds();
     this.formrate();
     this.getrates();
+    this.setOffsetTop();
     // this.ll();
+    this.getBlance();
   }
 
+  setOffsetTop(): void {
+    this.offsetTop += 70;
+  }
   // ll() {
   //   this.localbooks.map((element) => {
   //     if (this.bookid === element.id) {
@@ -135,6 +142,7 @@ export class ProductDetailsComponent implements OnInit {
           this.message.error('Please enter the funds');
         } else if (res.success === true) {
           this.message.success('Now you can buy any thing');
+          this.getBlance();
         } else {
           console.log(res);
         }
@@ -229,4 +237,11 @@ export class ProductDetailsComponent implements OnInit {
     });
   }
   //////////// geterates ///////////
+
+  getBlance() {
+    this.api.getBlance(this.userid).subscribe((res) => {
+      this.balances = res.balance;
+      console.log(this.balances);
+    });
+  }
 }
