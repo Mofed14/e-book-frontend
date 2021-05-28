@@ -6,6 +6,7 @@ import { DataService } from '../../services/data.service';
 import { Subject } from 'rxjs';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { Router } from '@angular/router';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @Component({
   selector: 'app-homepage',
@@ -14,12 +15,16 @@ import { Router } from '@angular/router';
 })
 export class HomepageComponent implements OnInit {
   book: any;
+  userbooks: any;
+  userbook: any;
+  localbooksids: any;
   constructor(
     private api: ApiService,
     private message: NzMessageService,
     private modal: NzModalService,
     public dataservice: DataService,
-    private router: Router
+    private router: Router,
+    private notification: NzNotificationService
   ) {}
   buyform: any;
   rates: any;
@@ -35,11 +40,13 @@ export class HomepageComponent implements OnInit {
   keybookdata = localStorage.getItem('userData');
   data;
   url = 'https://joberapp.net/e-library/';
+  userid = localStorage.getItem('userData');
 
   private subject = new Subject<any>();
 
   ngOnInit(): void {
     this.listAllBooks(this.limit);
+    this.getuserbooks();
     // this.form();
     // console.log(this.bookid);
   }
@@ -52,7 +59,6 @@ export class HomepageComponent implements OnInit {
         this.array = res.books.map((result) => {
           this.bookid = result.id;
         });
-        console.log(this.books);
       } else {
         this.message.warning('No books yet');
       }
@@ -84,12 +90,35 @@ export class HomepageComponent implements OnInit {
 
   adddatatolocalstorage(event) {
     const oldobject = JSON.parse(localStorage.getItem(this.keybookdata)) || [];
+    oldobject.map((res) => {
+      this.localbooksids = res.id;
+    });
     if (oldobject.length >= 5) {
       this.message.warning('Your cart is full');
+    } else if (this.userbook === event.id) {
+      this.message.info('This book has already been purchased');
+    } else if (this.localbooksids === event.id) {
+      this.message.info('This book is already in cart');
     } else {
       oldobject.push(event);
       localStorage.setItem(this.keybookdata, JSON.stringify(oldobject));
       this.message.success('The book added to your cart');
     }
+  }
+
+  getuserbooks() {
+    this.api.getUserBooksByUserId(this.userid).subscribe((res) => {
+      if (res.error === 404) {
+        // this.error = res.error;
+        this.message.info('You don`t have any books ');
+      } else if (res.success === true) {
+        this.userbooks = res.books;
+        this.userbooks.map((res) => {
+          this.userbook = res.book_id;
+        });
+      } else {
+        console.log(res);
+      }
+    });
   }
 }

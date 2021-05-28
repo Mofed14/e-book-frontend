@@ -99,7 +99,6 @@ export class ProductDetailsComponent implements OnInit {
             this.indexOfElement = this.localbooks.indexOf(element);
             // splice(starting index, how many values to remove);
             this.localbooks.splice(this.indexOfElement, 1);
-            console.log(this.localbooks);
             /// add the new books after detete the book i buyed
             localStorage.setItem(
               localStorage.getItem('userData'),

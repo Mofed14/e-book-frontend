@@ -41,9 +41,7 @@ export class ViewCartComponent implements OnInit {
   }
 
   getbooksfromlocalstorage() {
-    if (
-      JSON.parse(localStorage.getItem(localStorage.getItem('userData'))).length
-    ) {
+    if (JSON.parse(localStorage.getItem(localStorage.getItem('userData')))) {
       this.storagebooks = JSON.parse(
         localStorage.getItem(localStorage.getItem('userData'))
       );
@@ -52,6 +50,7 @@ export class ViewCartComponent implements OnInit {
         return (this.Ids = this.books.id);
       });
     } else {
+      this.message.error('Your cart is empty');
       this.storagebooks = [];
       this.empty = this.storagebooks;
     }
@@ -67,6 +66,7 @@ export class ViewCartComponent implements OnInit {
       nzOnOk: () => {
         localStorage.removeItem(localStorage.getItem('userData'));
         this.getbooksfromlocalstorage();
+        this.router.navigate(['/']);
       },
       nzCancelText: 'No',
       nzOnCancel: () => console.log('Cancel'),
@@ -89,12 +89,7 @@ export class ViewCartComponent implements OnInit {
 
     this.api.buyBook(body).subscribe((res) => {
       if (res.error === 422) {
-        this.message.info(
-          'You doesn`t have enough balance or You already have this book in your library'
-        );
-        this.message.warning(
-          'Pleace check if you have balance or you have this book'
-        );
+        this.message.info('You don`t have enough balance');
       } else if (res.success === true) {
         this.message.success('user successfully purchased book');
         localStorage.removeItem(localStorage.getItem('userData'));
