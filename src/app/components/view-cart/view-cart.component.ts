@@ -41,7 +41,9 @@ export class ViewCartComponent implements OnInit {
   }
 
   getbooksfromlocalstorage() {
-    if (JSON.parse(localStorage.getItem(localStorage.getItem('userData')))) {
+    if (
+      JSON.parse(localStorage.getItem(localStorage.getItem('userData'))).length
+    ) {
       this.storagebooks = JSON.parse(
         localStorage.getItem(localStorage.getItem('userData'))
       );
@@ -49,7 +51,6 @@ export class ViewCartComponent implements OnInit {
         this.books = res;
         return (this.Ids = this.books.id);
       });
-      console.log(this.booksIds);
     } else {
       this.storagebooks = [];
       this.empty = this.storagebooks;

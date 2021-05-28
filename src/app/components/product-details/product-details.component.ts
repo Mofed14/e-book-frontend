@@ -4,6 +4,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { LEGACY_ID_INDICATOR } from '@angular/localize/src/utils';
 
 @Component({
   selector: 'app-product-details',
@@ -26,7 +27,8 @@ export class ProductDetailsComponent implements OnInit {
     localStorage.getItem(localStorage.getItem('userData'))
   );
   removed: any;
-  indexOfElement: any;
+  indexOfElement: number;
+  result: any;
 
   constructor(
     private api: ApiService,
@@ -56,7 +58,8 @@ export class ProductDetailsComponent implements OnInit {
   //       this.indexOfElement = this.localbooks.indexOf(element);
   //       console.log(this.indexOfElement);
   //       // splice(starting index, how many values to remove);
-  //       this.localbooks.splice(this.indexOfElement, 1);
+  //       this.result = this.localbooks.splice(this.indexOfElement, 1);
+  //       console.log(this.result);
   //       console.log(this.localbooks);
   //     }
   //   });
@@ -77,7 +80,6 @@ export class ProductDetailsComponent implements OnInit {
       user_id: this.buyform.value.user_id,
       books: [this.bookid],
     };
-    console.log(body);
     this.api.buyBook(body).subscribe((res) => {
       if (res.error === 422) {
         this.message.info(
@@ -87,6 +89,25 @@ export class ProductDetailsComponent implements OnInit {
           'Pleace check if you have balance or you have this book'
         );
       } else if (res.success === true) {
+        // map on the books on localstorage
+        this.localbooks.map((element) => {
+          // condition if the bookid of this identical the book id to anyone in localstorage
+          // find the number of the index
+          // after find the index delet it from array
+          // the add the new array or new data to the localstorage
+          if (this.bookid === element.id) {
+            this.indexOfElement = this.localbooks.indexOf(element);
+            // splice(starting index, how many values to remove);
+            this.localbooks.splice(this.indexOfElement, 1);
+            console.log(this.localbooks);
+            /// add the new books after detete the book i buyed
+            localStorage.setItem(
+              localStorage.getItem('userData'),
+              JSON.stringify(this.localbooks)
+            );
+          }
+        });
+
         this.message.success('user successfully purchased book');
         this.router.navigate(['/']);
       } else {
