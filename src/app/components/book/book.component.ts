@@ -14,6 +14,7 @@ export class BookComponent implements OnInit {
   rateform: any;
   rates: any;
   userId: any;
+  balances: any;
   constructor(
     private api: ApiService,
     private message: NzMessageService,
@@ -34,6 +35,7 @@ export class BookComponent implements OnInit {
   ngOnInit(): void {
     this.getuserbooks();
     this.formrate();
+    this.getBlance();
   }
 
   // tslint:disable-next-line:typedef
@@ -135,4 +137,11 @@ export class BookComponent implements OnInit {
     });
   }
   ///// get rates ///////////
+
+  getBlance() {
+    this.api.getBlance(this.userid).subscribe((res) => {
+      this.balances = res.balance;
+      console.log(this.balances);
+    });
+  }
 }

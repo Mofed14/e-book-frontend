@@ -45,6 +45,13 @@
                 <div class="section-title-5 text-center">
                     <h2>My Books</h2>
                 </div>
+                <div class="d-flex flex-row-reverse bd-highlight">
+                  <nz-row [nzGutter]="16">
+                    <nz-col [nzSpan]="12" class="balance">
+                      <nz-statistic [nzValue]="balances" [nzTitle]="'Your Balance'"></nz-statistic>
+                    </nz-col>
+                  </nz-row>
+                </div>
                 <div class="toolbar mb-30">
                     <div class="shop-tab">
                         <div class="list-page">
