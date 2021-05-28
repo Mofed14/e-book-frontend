@@ -152,11 +152,11 @@ nav ul li {
   transform: 0.2s;
 }
 
-@media (max-width: 990px) {
+@media (max-width: 991px) {
   .navbar ul li a::after {
     content: "";
     position: absolute;
-    width: 40%;
+    width: 100%;
     transform: scaleX(0);
     height: 2px;
     bottom: -2px;
@@ -191,5 +191,37 @@ nav ul li {
   nav ul li {
     padding-right: 20px;
     float: left;
+  }
+}
+
+@media (max-width: 720px) {
+  nav ul li {
+    padding-right: 0px;
+  }
+  .navbar ul li a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 0px;
+    transform-origin: bottom right;
+    background-color: #23dbdb;
+    transition: 0.25s ease-out;
+    color: #23dbdb;
+  }
+
+  .navbar ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .navbar ul li a:hover {
+    color: #23dbdb;
+  }
+
+  .navbar ul li a:focus {
+    color: #23dbdb;
+    transform: 0.2s;
   }
 }
