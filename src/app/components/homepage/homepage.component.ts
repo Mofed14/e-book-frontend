@@ -8,7 +8,6 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { FormBuilder, Validators } from '@angular/forms';
-import { element } from 'protractor';
 
 @Component({
   selector: 'app-homepage',
