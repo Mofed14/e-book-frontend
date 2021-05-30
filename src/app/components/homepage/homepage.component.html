@@ -71,7 +71,7 @@
                         <div class="row">
                             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6" *ngFor="let book of books | filter:searchText">
                                 <!-- single-product-start -->
-                                <div class="product-wrapper mb-40">
+                                <div class="product-wrapper mb-40" *ngIf="book">
                                     <div class="product-img" style="height: 400px;">
                                         <a>
                                             <img src="{{url}}{{book.image}}" alt="book" class="primary">

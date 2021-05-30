@@ -115,8 +115,6 @@ export class ViewCartComponent implements OnInit {
       user_id: this.buyform.value.user_id,
       books: this.booksIds,
     };
-    console.log(body);
-
     this.api.buyBook(body).subscribe((res) => {
       if (res.error === 422) {
         this.message.info('You don`t have enough balance');
@@ -154,7 +152,13 @@ export class ViewCartComponent implements OnInit {
         if (res.error === 400) {
           this.message.error('Please enter the funds');
         } else if (res.success === true) {
-          this.message.success('Now you can buy any thing');
+          this.message.success(
+            `You added ${
+              body.amount
+            } to your account balance your balance now is ${
+              Number(this.balances) + Number(body.amount)
+            }`
+          );
           this.getBlance();
         } else {
           console.log(res);

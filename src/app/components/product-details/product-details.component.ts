@@ -141,7 +141,13 @@ export class ProductDetailsComponent implements OnInit {
         if (res.error === 400) {
           this.message.error('Please enter the funds');
         } else if (res.success === true) {
-          this.message.success('Now you can buy any thing');
+          this.message.success(
+            `You added ${
+              body.amount
+            } to your account balance your balance now is ${
+              Number(this.balances) + Number(body.amount)
+            }`
+          );
           this.getBlance();
         } else {
           console.log(res);

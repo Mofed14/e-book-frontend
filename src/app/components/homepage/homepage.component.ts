@@ -8,6 +8,7 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { FormBuilder, Validators } from '@angular/forms';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-homepage',
@@ -16,13 +17,14 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class HomepageComponent implements OnInit {
   book: any;
-  userbooks: any;
+  userbooks = [];
   userbook: any;
   localbooksids: any;
   user: any;
   balances: any;
   formBalnce: any;
   addfundsform: any;
+  userbookid: any;
   constructor(
     private api: ApiService,
     private message: NzMessageService,
@@ -103,19 +105,21 @@ export class HomepageComponent implements OnInit {
 
   adddatatolocalstorage(event) {
     const oldobject = JSON.parse(localStorage.getItem(this.keybookdata)) || [];
-    oldobject.map((res) => {
-      this.localbooksids = res.id;
-    });
-    if (oldobject.length >= 5) {
-      this.message.warning('Your cart is full');
-    } else if (this.userbook === event.id) {
+
+    const checked = this.userbooks.some(
+      (element) => element.book_id === event.id
+    );
+    const anotherChecked = oldobject.some((e) => e.id === event.id);
+    if (checked === true) {
       this.message.info('This book has already been purchased');
-    } else if (this.localbooksids === event.id) {
-      this.message.info('This book is already in cart');
-    } else {
+    } else if (anotherChecked === true) {
+      this.message.info('This book is already in your cart');
+    } else if (checked === false && anotherChecked === false) {
       oldobject.push(event);
       localStorage.setItem(this.keybookdata, JSON.stringify(oldobject));
       this.message.success('The book added to your cart');
+    } else {
+      console.log('another error');
     }
   }
 
@@ -126,9 +130,16 @@ export class HomepageComponent implements OnInit {
         this.message.info('You don`t have any books ');
       } else if (res.success === true) {
         this.userbooks = res.books;
-        this.userbooks.map((res) => {
-          this.userbook = res.book_id;
-        });
+        console.log(this.userbooks);
+        // this.userbooks.forEach((element) => {
+        //   this.userbook = element;
+        // });
+
+        // console.log(this.userbook);
+
+        // this.userbooks.map((res) => {
+        //   this.userbook = res.book_id;
+        // });
       } else {
         console.log(res);
       }
@@ -182,7 +193,13 @@ export class HomepageComponent implements OnInit {
         if (res.error === 400) {
           this.message.error('Please enter the funds');
         } else if (res.success === true) {
-          this.message.success('Now you can buy any thing');
+          this.message.success(
+            `You added ${
+              body.amount
+            } to your account balance your balance now is ${
+              Number(this.balances) + Number(body.amount)
+            }`
+          );
           this.getBlance();
         } else {
           console.log(res);

@@ -11,10 +11,12 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./book.component.css'],
 })
 export class BookComponent implements OnInit {
+  books: any;
   rateform: any;
   rates: any;
   userId: any;
   balances: any;
+  array = [];
   constructor(
     private api: ApiService,
     private message: NzMessageService,
@@ -23,7 +25,6 @@ export class BookComponent implements OnInit {
     private fb: FormBuilder
   ) {}
   userid = localStorage.getItem('userData');
-  books: any;
   error: any;
   closeResult = '';
   bookid: any;
@@ -45,11 +46,16 @@ export class BookComponent implements OnInit {
         this.error = res.error;
         this.message.info('You don`t have any books ');
       } else if (res.success === true) {
-        this.books = res.books;
-        if (this.books.length === 1) {
-          this.notification.blank('Rate Now', 'Please rate this book');
-        } else if (this.books.length > 1) {
-          this.notification.blank('Rate Now', 'Please rate these books');
+        if (res.books.length) {
+          this.books = res.books || [];
+          this.array = res.books;
+          if (this.books.length === 1) {
+            this.notification.blank('Rate Now', 'Please rate this book');
+          } else if (this.books.length > 1) {
+            this.notification.blank('Rate Now', 'Please rate these books');
+          }
+        } else {
+          this.message.warning('No books yet');
         }
       } else {
         console.log(res);

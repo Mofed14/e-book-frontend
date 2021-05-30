@@ -12,7 +12,7 @@
 
     </div>
   </div>
-    <div class="container">
+    <div class="container" *ngIf="bookdata">
         <div class="row">
             <div class="col-lg-9 col-md-12 col-12 order-lg-1 order-1">
                 <!-- product-main-area-start -->
@@ -22,8 +22,7 @@
                             <div class="flexslider">
 
                             <div class="flex-viewport" style="overflow: hidden; position: relative;">
-                                      <img src="{{url}}{{bookdata.image}}" alt="woman" draggable="false">
-
+                                <img src="{{url}}{{bookdata.image}}" alt="book">
                             </div>
                         </div>
                         </div>
@@ -59,7 +58,7 @@
                                               <span>Add money</span>
                                             </button>
                                           </nz-affix>
-                                          <p>Your plance {{balances}}</p>
+                                          <p>Your blance {{balances}}</p>
                                         </div>
                                     </div>
                                     <div class="product-add-form">
