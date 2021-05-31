@@ -25,7 +25,7 @@ export class ProductDetailsComponent implements OnInit {
   url = 'https://joberapp.net/e-library/';
   localbooks = JSON.parse(
     localStorage.getItem(localStorage.getItem('userData'))
-  );
+  ) || [];
   removed: any;
   indexOfElement: number;
   result: any;
